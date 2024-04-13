@@ -35,7 +35,7 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
           <td className="px-2 py-2">{person.immigration_date}</td>
           <td className="px-6">
             <a
-              href={`http://localhost:3000/record/${person.id}`}
+              href={`https://amerikafararna.vercel.app/record/${person.id}`}
               className="text-sm">
               Läs mer
             </a>
