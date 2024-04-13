@@ -1,6 +1,11 @@
 import { promises as fs } from 'fs';
 
-interface data {
+import Table from './components/Table';
+
+export interface Data {
+  person: Person[];
+}
+export interface Person {
   ID: number;
   parish: string;
   title: string;
@@ -20,13 +25,14 @@ interface data {
 export default async function Home() {
   const file = await fs.readFile(process.cwd() + '/data/data.json', 'utf8');
 
-  const data = JSON.parse(file);
-
-  console.log(data);
+  const data: Data = JSON.parse(file);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h2>Älekullas amerikafarare</h2>
+      <h1 className="text-4xl pb-10">Älekullas amerikafarare</h1>
+      <section>
+        <Table data={data} />
+      </section>
     </main>
   );
 }
