@@ -8,7 +8,7 @@ interface RecordProps {
 }
 
 async function getRecord(id: string) {
-  const file = await fs.readFile(process.cwd() + 'app/data.json', 'utf8');
+  const file = await fs.readFile(process.cwd() + '/app/data.json', 'utf8');
 
   const records: Data = JSON.parse(file);
 
