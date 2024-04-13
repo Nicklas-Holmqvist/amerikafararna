@@ -7,23 +7,24 @@ interface RecordProps {
   params: { id: string };
 }
 
-async function getRecord(id: string) {
-  const file = await fs.readFile(process.cwd() + '/app/data.json', 'utf8');
+// async function getRecord(id: string) {
+//   const file = await fs.readFile(process.cwd() + '/app/data.json', 'utf8');
 
-  const records: Data = JSON.parse(file);
+//   const records: Data = JSON.parse(file);
 
-  const filteredRecord = records.person.filter((record) => {
-    return record.ID.toString() === id;
-  });
-  if (filteredRecord === null) return null;
-  return filteredRecord[0];
-}
+//   const filteredRecord = records.person.filter((record) => {
+//     return record.ID.toString() === id;
+//   });
+//   if (filteredRecord === null) return null;
+//   return filteredRecord[0];
+// }
 
 const Record = async ({ params: { id } }: RecordProps) => {
-  const record: Person | null = await getRecord(id);
+  // const record: Person | null = await getRecord(id);
   return (
     <main className="max-w-[1200px] m-auto flex flex-col justify-between pt-14">
-      {record === null ? (
+      {id}
+      {/* {record === null ? (
         <h1>FEL</h1>
       ) : (
         <Suspense fallback={<div></div>}>
@@ -41,7 +42,7 @@ const Record = async ({ params: { id } }: RecordProps) => {
           <p>Utflyttningsdestination: {record!.emigration_destination}</p>
           <p>Övrig information: {record!.other}</p>
         </Suspense>
-      )}
+      )} */}
     </main>
   );
 };
