@@ -22,7 +22,7 @@ export interface Person {
 export const metadata: Metadata = {
   title: 'Älekullas Amerikafarare',
   description:
-    'Hitta alla som emigrerat eller immigrerat från Amerika mellan 1862 till 1928',
+    'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
 };
 
 async function getData() {
