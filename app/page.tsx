@@ -22,7 +22,8 @@ async function getData() {
   const { data, error } = await supabase
     .from('travellers')
     .select('*')
-    .order('first_name', { ascending: true });
+    .order('first_name', { ascending: true })
+    .order('last_name');
 
   if (error) {
     throw new Error('Failed to fetch data');
