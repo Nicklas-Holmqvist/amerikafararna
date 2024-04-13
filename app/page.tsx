@@ -1,12 +1,8 @@
-import { promises as fs } from 'fs';
-
 import Table from './components/Table';
+import { supabase } from './lib/supabaseClient';
 
-export interface Data {
-  person: Person[];
-}
 export interface Person {
-  ID: number;
+  id: number;
   parish: string;
   title: string;
   first_name: string;
@@ -22,14 +18,24 @@ export interface Person {
   age_of_emigration: string;
 }
 
-export default async function Home() {
-  const file = await fs.readFile(process.cwd() + '/data/data.json', 'utf8');
+async function getData() {
+  const { data, error } = await supabase
+    .from('travellers')
+    .select('*')
+    .order('first_name', { ascending: true });
 
-  const data: Data = JSON.parse(file);
+  if (error) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return data;
+}
+
+export default async function Home() {
+  const data = await getData();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl pb-10">Älekullas amerikafarare</h1>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-12">
       <section>
         <Table data={data} />
       </section>
