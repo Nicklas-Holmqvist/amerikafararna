@@ -11,11 +11,11 @@ export interface Person {
   emigration_from: string;
   emigration_date: string;
   emigration_destination: string;
-  birth_place: string;
+  birthplace: string;
   father: string;
   immigration_date: string;
   other: string;
-  age_of_emigration: string;
+  age_when_emigration: string;
 }
 
 async function getData() {
