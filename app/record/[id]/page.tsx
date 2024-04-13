@@ -1,8 +1,29 @@
 import { supabase } from '@/app/lib/supabaseClient';
 import { Person } from '@/app/page';
+import { Metadata } from 'next/types';
 
 interface RecordProps {
   params: { id: string };
+}
+
+export async function generateMetadata({
+  params: { id },
+}: RecordProps): Promise<Metadata> {
+  const record: Person = await getRecord(id);
+
+  if (record.id !== null) {
+    return {
+      title: `${record.first_name} ${record.last_name} | Älekullas Amerikafarare`,
+      description: `${record.first_name} ${record.last_name} föddes ${
+        record.year_of_birth
+      } i ${record.birthplace}. ${record.first_name} ${
+        record.emigration_date ? 'emigrerade från' : 'immegrerade till'
+      } mellan 1880 till 1928`,
+    };
+  }
+  return {
+    title: 'Ingen person hittad | Älekullas Amerikafarare',
+  };
 }
 
 async function getRecord(id: string) {

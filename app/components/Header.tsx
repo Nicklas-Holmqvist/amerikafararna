@@ -1,11 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <header>
-      <h1 className="text-4xl text-center pt-10">Älekullas amerikafarare</h1>
+      <Link href={'/'}>
+        <h1 className="text-4xl text-center pt-10">Älekullas Amerikafarare</h1>
+      </Link>
     </header>
   );
 };

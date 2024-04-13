@@ -1,3 +1,4 @@
+import { Metadata } from 'next/types';
 import Table from './components/Table';
 import { supabase } from './lib/supabaseClient';
 
@@ -17,6 +18,12 @@ export interface Person {
   other: string;
   age_when_emigration: string;
 }
+
+export const metadata: Metadata = {
+  title: 'Älekullas Amerikafarare',
+  description:
+    'Hitta alla som emigrerat eller immigrerat från Amerika mellan 1862 till 1928',
+};
 
 async function getData() {
   const { data, error } = await supabase
