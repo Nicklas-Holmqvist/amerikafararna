@@ -1,6 +1,6 @@
 import { Metadata } from 'next/types';
-import Table from './components/Table';
 import { supabase } from './lib/supabaseClient';
+import Table from './components/Table';
 
 export interface Person {
   id: number;

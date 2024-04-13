@@ -15,7 +15,7 @@ const titles = [
   'Infl datum',
 ];
 
-const ListItem: React.FC<TableProps> = ({ data }) => {
+const Table: React.FC<TableProps> = ({ data }) => {
   return (
     <table className="w-[1200px]">
       <tr>
@@ -46,4 +46,4 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
   );
 };
 
-export default ListItem;
+export default Table;

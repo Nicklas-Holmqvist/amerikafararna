@@ -18,7 +18,7 @@ export async function generateMetadata({
         record.year_of_birth
       } i ${record.birthplace}. ${record.first_name} ${
         record.emigration_date ? 'emigrerade från' : 'immegrerade till'
-      } mellan 1880 till 1928`,
+      } Älekulla mellan 1880 till 1928`,
     };
   }
   return {
