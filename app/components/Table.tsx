@@ -1,4 +1,5 @@
 import React from 'react';
+import { headers } from 'next/headers';
 
 import { Data } from '../page';
 
@@ -16,8 +17,10 @@ const titles = [
 ];
 
 const ListItem: React.FC<TableProps> = ({ data }) => {
+  const headersList = headers();
+  const referer = headersList.get('referer');
   return (
-    <table>
+    <table className="min-w-[1200px]">
       <tr>
         {titles.map((title, index) => (
           <th className="text-start px-2 pb-1" key={index}>
@@ -26,7 +29,7 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
         ))}
       </tr>
       {data.person.map((person, index) => (
-        <tr key={index} className=" border">
+        <tr key={index} className="border">
           <td className="px-2 py-2">{person.first_name}</td>
           <td className="px-2 py-2">{person.last_name}</td>
           <td className="px-2 py-2">{person.year_of_birth}</td>
@@ -34,7 +37,7 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
           <td className="px-2 py-2">{person.emigration_from}</td>
           <td className="px-2 py-2">{person.immigration_date}</td>
           <td className="px-6">
-            <a href="" className="text-sm">
+            <a href={`${referer}/record/${person.ID}`} className="text-sm">
               Läs mer
             </a>
           </td>

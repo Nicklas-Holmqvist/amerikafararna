@@ -28,8 +28,7 @@ export default async function Home() {
   const data: Data = JSON.parse(file);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl pb-10">Älekullas amerikafarare</h1>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-8">
       <section>
         <Table data={data} />
       </section>
