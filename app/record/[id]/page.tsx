@@ -8,7 +8,7 @@ interface RecordProps {
 }
 
 async function getRecord(id: string) {
-  const file = await fs.readFile(process.cwd() + 'app/data.json', 'utf8');
+  const file = await fs.readFile(process.cwd() + '/app/data.json', 'utf8');
 
   const records: Data = JSON.parse(file);
 
@@ -26,7 +26,7 @@ const Record = async ({ params: { id } }: RecordProps) => {
   return (
     <main className="max-w-[1200px] m-auto flex flex-col justify-between pt-14">
       {record === null ? (
-        <h1>FEL</h1>
+        <h1>!!!</h1>
       ) : (
         <Suspense fallback={<div></div>}>
           <p>Titel: {record!.title}</p>
