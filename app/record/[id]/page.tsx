@@ -25,7 +25,8 @@ const Record = async ({ params: { id } }: RecordProps) => {
 
   return (
     <main className="max-w-[1200px] m-auto flex flex-col justify-between pt-14">
-      {record === null ? (
+      <p>{id}</p>
+      {/* {record === null ? (
         <h1>!!!</h1>
       ) : (
         <Suspense fallback={<div></div>}>
@@ -43,7 +44,7 @@ const Record = async ({ params: { id } }: RecordProps) => {
           <p>Utflyttningsdestination: {record!.emigration_destination}</p>
           <p>Övrig information: {record!.other}</p>
         </Suspense>
-      )}
+      )} */}
     </main>
   );
 };
