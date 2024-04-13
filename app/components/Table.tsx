@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Data } from '../page';
+import { Person } from '../page';
 
 interface TableProps {
-  data: Data;
+  data: Person[];
 }
 
 const titles = [
@@ -11,22 +11,22 @@ const titles = [
   'Efternamn',
   'Födelsedatum',
   'Utfl datum',
-  'Utfl plats',
+  'Plats',
   'Infl datum',
 ];
 
 const ListItem: React.FC<TableProps> = ({ data }) => {
   return (
-    <table className="min-w-[1200px]">
+    <table className="w-[1200px]">
       <tr>
         {titles.map((title, index) => (
-          <th className="text-start px-2 pb-1" key={index}>
+          <th className="text-start px-2 pb-3" key={index}>
             {title}
           </th>
         ))}
       </tr>
-      {data.person.map((person, index) => (
-        <tr key={index} className="border">
+      {data.map((person, index) => (
+        <tr key={index} className="border hover:bg-gray-200 hover:cursor">
           <td className="px-2 py-2">{person.first_name}</td>
           <td className="px-2 py-2">{person.last_name}</td>
           <td className="px-2 py-2">{person.year_of_birth}</td>
@@ -34,7 +34,9 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
           <td className="px-2 py-2">{person.emigration_from}</td>
           <td className="px-2 py-2">{person.immigration_date}</td>
           <td className="px-6">
-            <a href={`./record/${person.ID}`} className="text-sm">
+            <a
+              href={`http://localhost:3000/record/${person.id}`}
+              className="text-sm">
               Läs mer
             </a>
           </td>
