@@ -1,5 +1,4 @@
 import React from 'react';
-import { headers } from 'next/headers';
 
 import { Data } from '../page';
 
@@ -17,8 +16,6 @@ const titles = [
 ];
 
 const ListItem: React.FC<TableProps> = ({ data }) => {
-  const headersList = headers();
-  const referer = headersList.get('referer');
   return (
     <table className="min-w-[1200px]">
       <tr>
@@ -37,7 +34,9 @@ const ListItem: React.FC<TableProps> = ({ data }) => {
           <td className="px-2 py-2">{person.emigration_from}</td>
           <td className="px-2 py-2">{person.immigration_date}</td>
           <td className="px-6">
-            <a href={`${referer}/record/${person.ID}`} className="text-sm">
+            <a
+              href={`https://amerikafararna.vercel.app/record/${person.ID}`}
+              className="text-sm">
               Läs mer
             </a>
           </td>
