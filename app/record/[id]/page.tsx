@@ -1,6 +1,7 @@
 import { supabase } from '@/app/lib/supabaseClient';
-import { Person } from '@/app/page';
 import { Metadata } from 'next/types';
+
+import { Person } from '@/app/page';
 
 interface RecordProps {
   params: { id: string };
@@ -30,7 +31,7 @@ async function getRecord(id: string) {
   const idToNumber = Number(id);
   const { data, error } = await supabase
     .from('travellers')
-    .select('*')
+    .select()
     .eq('id', idToNumber);
 
   if (error) {
