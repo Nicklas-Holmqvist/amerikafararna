@@ -1,6 +1,12 @@
 import { Metadata } from 'next/types';
-import { supabase } from './lib/supabaseClient';
 import Table from './components/Table';
+import { Suspense } from 'react';
+
+export const metadata: Metadata = {
+  title: 'Älekullas Amerikafarare',
+  description:
+    'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
+};
 
 export interface Person {
   id: number;
@@ -19,33 +25,13 @@ export interface Person {
   age_when_emigration: string;
 }
 
-export const metadata: Metadata = {
-  title: 'Älekullas Amerikafarare',
-  description:
-    'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
-};
-
-async function getData() {
-  const { data, error } = await supabase
-    .from('travellers')
-    .select('*')
-    .order('first_name', { ascending: true })
-    .order('last_name');
-
-  if (error) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return data;
-}
-
 export default async function Home() {
-  const data = await getData();
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-12">
       <section>
-        <Table data={data} />
+        <Suspense>
+          <Table />
+        </Suspense>
       </section>
     </main>
   );

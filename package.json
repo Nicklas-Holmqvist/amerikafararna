@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamist/lucide-react": "^0.0.1-patch",
     "@supabase/supabase-js": "^2.42.3",
     "next": "14.1.4",
     "react": "^18",
