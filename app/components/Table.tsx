@@ -115,7 +115,7 @@ const Table: React.FC<TableProps> = () => {
       {loading ? (
         ''
       ) : (
-        <>
+        <Suspense fallback={<div></div>}>
           <table className="mb-4 text-base">
             <tr>
               {titles.map((title, index) => (
@@ -124,26 +124,24 @@ const Table: React.FC<TableProps> = () => {
                 </th>
               ))}
             </tr>
-            <Suspense fallback={<div></div>}>
-              {records!.map((person, index) => (
-                <tr
-                  className="border hover:bg-gray-100 hover:cursor-pointer"
-                  key={index}
-                  onClick={() =>
-                    router.push(
-                      `https://amerikafararna.vercel.app/record/${person.id}`
-                    )
-                  }>
-                  <td className="px-2 py-2">{person.first_name}</td>
-                  <td className="px-2 py-2">{person.last_name}</td>
-                  <td className="px-2 py-2">{person.year_of_birth}</td>
-                  <td className="px-2 py-2">{person.emigration_date}</td>
-                  <td className="px-2 py-2">{person.emigration_from}</td>
-                  <td className="px-2 py-2">{person.immigration_date}</td>
-                  <td className="px-6"></td>
-                </tr>
-              ))}
-            </Suspense>
+            {records!.map((person, index) => (
+              <tr
+                className="border hover:bg-gray-100 hover:cursor-pointer"
+                key={index}
+                onClick={() =>
+                  router.push(
+                    `https://amerikafararna.vercel.app/record/${person.id}`
+                  )
+                }>
+                <td className="px-2 py-2">{person.first_name}</td>
+                <td className="px-2 py-2">{person.last_name}</td>
+                <td className="px-2 py-2">{person.year_of_birth}</td>
+                <td className="px-2 py-2">{person.emigration_date}</td>
+                <td className="px-2 py-2">{person.emigration_from}</td>
+                <td className="px-2 py-2">{person.immigration_date}</td>
+                <td className="px-6"></td>
+              </tr>
+            ))}
           </table>
           <nav className="flex flex-row justify-center">
             {Array.from({ length: currentPages }, (v, index: number) => (
@@ -157,7 +155,7 @@ const Table: React.FC<TableProps> = () => {
               </button>
             ))}
           </nav>
-        </>
+        </Suspense>
       )}
     </div>
   );

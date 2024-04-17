@@ -1,5 +1,6 @@
 import { Metadata } from 'next/types';
 import Table from './components/Table';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Älekullas Amerikafarare',
@@ -28,7 +29,9 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-12">
       <section>
-        <Table />
+        <Suspense>
+          <Table />
+        </Suspense>
       </section>
     </main>
   );
