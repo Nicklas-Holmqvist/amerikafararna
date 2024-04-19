@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { ListOfPersons } from '../page';
 import { supabase } from '../lib/supabaseClient';
+import SearchBar from './SearchBar';
 
 interface TableProps {}
 
@@ -24,36 +25,45 @@ const Table: React.FC<TableProps> = () => {
   const searchParams = useSearchParams();
 
   const pageParam: string | null = searchParams.get('page');
+  const searchParam: string | null = searchParams.get('search');
   const currentPage: number = Number(pageParam);
 
   const pageSize: number = 25;
 
   const [paginationPages, setPaginationsPages] = useState<number>(20);
-
   const [records, setRecords] = useState<ListOfPersons[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [searchValue, setSearchValue] = useState<string>('');
 
   const currentPages = paginationPages;
 
   useEffect(() => {
     setLoading(true);
     if (currentPage === 0 || currentPage === null) {
-      getData(1);
+      console.log('nystart');
+      getData(1, '*');
     } else {
-      getData(currentPage);
+      console.log('else');
+      getData(currentPage, searchParam);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function getData(page: number) {
+  async function getData(page: number, search: string) {
     setLoading(true);
     const indexOfLastItem = page * pageSize;
     const indexOfFirstItem = indexOfLastItem - pageSize;
+    const formattedSearch = search.toLowerCase();
+    router.push(`?${pathname}page=${page}&search=${search}`);
+
     const { data, count, error } = await supabase
       .from('travellers')
       .select(
         'id, first_name, last_name, year_of_birth, emigration_from, emigration_date, immigration_date',
         { count: 'exact' }
+      )
+      .or(
+        `first_name.ilike.%${search}%,last_name.ilike.%${search}%,year_of_birth.ilike.%${search}%,father.ilike.%${search}%,emigration_from.ilike.%${search}%,other.ilike.%${search}%`
       )
       .order('first_name', { ascending: true })
       .order('last_name')
@@ -63,22 +73,31 @@ const Table: React.FC<TableProps> = () => {
     if (error || !count) {
       throw new Error('Failed to fetch data');
     }
-    router.push(pathname + '?page=' + page);
     setPaginationsPages(Math.ceil(count / pageSize));
     setRecords(data);
     setLoading(false);
   }
 
   const handlePagination = (page: number) => {
-    if (page === 0) return getData(page + 1);
-    getData(page + 1);
+    if (page === 0) return getData(page + 1, searchValue);
+    getData(page + 1, searchValue);
   };
+
+  const handleSearchEvent = (inputValue: string) => {
+    getData(1, inputValue);
+  };
+
   return (
     <div className="max-w-[1200px] flex flex-col">
       {loading ? (
         ''
       ) : (
         <Suspense fallback={<div></div>}>
+          <SearchBar
+            onInputChange={setSearchValue}
+            inputValue={searchValue}
+            handleSearchEvent={handleSearchEvent}
+          />
           <table className="mb-4 text-base">
             <tr>
               {titles.map((title, index) => (
