@@ -25,6 +25,16 @@ export interface Person {
   age_when_emigration: string;
 }
 
+export interface ListOfPersons {
+  id: string;
+  first_name: string;
+  last_name: string;
+  year_of_birth: string;
+  emigration_from: string;
+  emigration_date: string;
+  immigration_date: string;
+}
+
 export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-12">

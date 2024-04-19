@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-import { Person } from '../page';
+import { ListOfPersons } from '../page';
 import { supabase } from '../lib/supabaseClient';
 
 interface TableProps {}
@@ -30,7 +30,7 @@ const Table: React.FC<TableProps> = () => {
 
   const [paginationPages, setPaginationsPages] = useState<number>(20);
 
-  const [records, setRecords] = useState<Person[] | []>([]);
+  const [records, setRecords] = useState<ListOfPersons[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   const currentPages = paginationPages;
@@ -38,49 +38,9 @@ const Table: React.FC<TableProps> = () => {
   useEffect(() => {
     setLoading(true);
     if (currentPage === 0 || currentPage === null) {
-      const indexOfLastItem = 1 * pageSize;
-      const indexOfFirstItem = indexOfLastItem - pageSize;
-      const fetchData = async () => {
-        const { data, count, error } = await supabase
-          .from('travellers')
-          .select('*', { count: 'exact' })
-          .order('first_name', { ascending: true })
-          .order('last_name')
-          .limit(pageSize)
-          .range(indexOfFirstItem, indexOfLastItem);
-
-        if (error || !count) {
-          throw new Error('Failed to fetch data');
-        }
-        router.push(pathname + '?page=1');
-        setPaginationsPages(Math.ceil(count / pageSize));
-        setRecords(data);
-        setLoading(false);
-      };
-
-      fetchData();
+      getData(1);
     } else {
-      const indexOfLastItem = currentPage * pageSize;
-      const indexOfFirstItem = indexOfLastItem - pageSize;
-      const fetchData = async () => {
-        const { data, count, error } = await supabase
-          .from('travellers')
-          .select('*', { count: 'exact' })
-          .order('first_name', { ascending: true })
-          .order('last_name')
-          .limit(pageSize)
-          .range(indexOfFirstItem, indexOfLastItem);
-
-        if (error || !count) {
-          throw new Error('Failed to fetch data');
-        }
-        router.push(pathname + '?page=' + currentPage);
-        setPaginationsPages(Math.ceil(count / pageSize));
-        setRecords(data);
-        setLoading(false);
-      };
-
-      fetchData();
+      getData(currentPage);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -91,7 +51,10 @@ const Table: React.FC<TableProps> = () => {
     const indexOfFirstItem = indexOfLastItem - pageSize;
     const { data, count, error } = await supabase
       .from('travellers')
-      .select('*', { count: 'exact' })
+      .select(
+        'id, first_name, last_name, year_of_birth, emigration_from, emigration_date, immigration_date',
+        { count: 'exact' }
+      )
       .order('first_name', { ascending: true })
       .order('last_name')
       .limit(pageSize)
