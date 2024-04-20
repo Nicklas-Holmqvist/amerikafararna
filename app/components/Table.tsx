@@ -102,8 +102,8 @@ const Table: React.FC<TableProps> = () => {
             resetSearch={resetSearch}
           />
           {records.length !== 0 ? (
-            <table className="mb-4 table-auto text-sm">
-              <tr>
+            <table className="mb-8 table-auto text-sm">
+              <tr className="text-lg">
                 {titles.map((title, index) => (
                   <th className="text-start px-2 pb-2" key={index}>
                     {title}
@@ -112,7 +112,7 @@ const Table: React.FC<TableProps> = () => {
               </tr>
               {records!.map((person, index) => (
                 <tr
-                  className="border hover:bg-gray-100 hover:cursor-pointer"
+                  className="border-y  hover:cursor-pointer hover:bg-green hover:text-basic-white"
                   key={index}
                   onClick={() =>
                     router.push(`${window.location.origin}/record/${person.id}`)
@@ -133,8 +133,10 @@ const Table: React.FC<TableProps> = () => {
             {Array.from({ length: currentPages }, (v, index: number) => (
               <button
                 key={index}
-                className={`p-2 w-10 h-10 m-1 border hover:bg-gray-200 ${
-                  Number(currentPage) === index + 1 ? 'bg-gray-300' : ''
+                className={`p-2 w-10 h-10 m-1 border ${
+                  Number(currentPage) === index + 1
+                    ? 'bg-green text-basic-white'
+                    : ''
                 }`}
                 onClick={() => handlePagination(index)}>
                 {index + 1}

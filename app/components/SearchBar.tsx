@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   resetSearch,
 }) => {
   return (
-    <section className="flex flex-col mb-6">
+    <section className="flex flex-col mb-8 w-full max-w-[40rem] m-auto">
       <div className="flex w-100 h-10 mb-1">
         <input
           onChange={(event) => onInputChange(event.target.value)}
@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             } else return;
           }}
           value={inputValue}
-          className="w-auto flex-grow pl-2 border text-sm"
+          className="w-auto flex-grow pl-2 bg-basic-white border text-sm border text-black placeholder-black"
           type="text"
           name="search"
           id="search"
@@ -34,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         />
         <button
           id="search"
-          className="w-20 border hover:bg-gray-300"
+          className="w-20 border"
           onClick={(event) => {
             event.preventDefault();
             handleSearchEvent(inputValue);
