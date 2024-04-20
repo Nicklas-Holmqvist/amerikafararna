@@ -1,9 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Domine, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+const domine = Domine({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  variable: '--font-domine',
+});
+const serifDisplay = DM_Serif_Display({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-serifDisplay',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${serifDisplay.variable} ${domine.variable}`}>
         <Header />
         {children}
       </body>

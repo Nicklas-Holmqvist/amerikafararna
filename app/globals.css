@@ -3,7 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-white: #f1efed;
+  --color-green: #353831;
+  --color-beige: #a89178;
+  --color-muslin: #d5cdba;
+  --color-black: #141414;
+}
+
+body {
+  background-color: var(--color-white);
+}
+
+h1 {
+  font-family: var(--font-serifDisplay);
+}
+
+h1,
+h2,
+th,
+button {
+  font-family: var(--font-serifDisplay);
+}
+
+td,
+nav,
+dl,
+dd,
+input,
+span {
+  font-family: var(--font-domine);
+  font-weight: 400;
+}
+
+dl {
+  font-weight: 500;
+}
+
+button {
+  background-color: var(--color-white);
+  color: var(--color-green);
+  border-color: var(--color-green);
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-color: var(--color-white);
 }

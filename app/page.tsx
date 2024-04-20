@@ -37,7 +37,7 @@ export interface ListOfPersons {
 
 export default async function Home() {
   return (
-    <main className="w-100 min-h-screen flex-col items-center justify-between py-16">
+    <main className="w-100 flex-col items-center justify-between py-8">
       <section>
         <Suspense>
           <Table />
