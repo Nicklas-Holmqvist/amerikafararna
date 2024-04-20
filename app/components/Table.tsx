@@ -4,10 +4,10 @@ import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-import { ListOfPersons } from '../page';
 import { supabase } from '../lib/supabaseClient';
-import SearchBar from './SearchBar';
 import NoSearchResult from './NoSearchResults';
+import { ListOfPersons } from '../page';
+import SearchBar from './SearchBar';
 
 interface TableProps {}
 
@@ -50,6 +50,7 @@ const Table: React.FC<TableProps> = () => {
 
   useEffect(() => {
     getData(currentPage, searchParam!);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageParam, searchParam]);
 
   async function getData(page: number, search: string) {
@@ -71,7 +72,6 @@ const Table: React.FC<TableProps> = () => {
       .order('last_name')
       .limit(pageSize)
       .range(indexOfFirstItem, indexOfLastItem);
-
     if (error) {
       setRecords([]);
     }
@@ -81,16 +81,20 @@ const Table: React.FC<TableProps> = () => {
   }
 
   const handlePagination = (page: number) => {
-    if (page === 0) return getData(page + 1, searchValue);
-    getData(page + 1, searchValue);
+    if (page === 0) return getData(page + 1, searchParam!);
+    getData(page + 1, searchParam!);
   };
 
   const handleSearchEvent = (inputValue: string) => {
     getData(1, inputValue);
+    setSearchValue('');
   };
-  console.log(records.length);
+
+  const resetSearch = () => {
+    getData(1, '');
+  };
   return (
-    <div className="max-w-[1200px] flex flex-col">
+    <section className="max-w-[1200px] flex flex-col m-auto px-12 lg:px-0">
       {loading ? (
         ''
       ) : (
@@ -99,12 +103,14 @@ const Table: React.FC<TableProps> = () => {
             onInputChange={setSearchValue}
             inputValue={searchValue}
             handleSearchEvent={handleSearchEvent}
+            searchParam={searchParam!}
+            resetSearch={resetSearch}
           />
           {records.length !== 0 ? (
-            <table className="mb-4 text-base">
+            <table className="mb-4 table-auto text-sm">
               <tr>
                 {titles.map((title, index) => (
-                  <th className="text-start px-2 pb-3" key={index}>
+                  <th className="text-start px-2 pb-2" key={index}>
                     {title}
                   </th>
                 ))}
@@ -114,9 +120,7 @@ const Table: React.FC<TableProps> = () => {
                   className="border hover:bg-gray-100 hover:cursor-pointer"
                   key={index}
                   onClick={() =>
-                    router.push(
-                      `https://amerikafararna.vercel.app/record/${person.id}`
-                    )
+                    router.push(`${window.location.origin}/record/${person.id}`)
                   }>
                   <td className="px-2 py-2">{person.first_name}</td>
                   <td className="px-2 py-2">{person.last_name}</td>
@@ -124,14 +128,13 @@ const Table: React.FC<TableProps> = () => {
                   <td className="px-2 py-2">{person.emigration_date}</td>
                   <td className="px-2 py-2">{person.emigration_from}</td>
                   <td className="px-2 py-2">{person.immigration_date}</td>
-                  <td className="px-6"></td>
                 </tr>
               ))}
             </table>
           ) : (
             <NoSearchResult />
           )}
-          <nav className="flex flex-row justify-center">
+          <nav className="flex flex-row justify-center text-sm">
             {Array.from({ length: currentPages }, (v, index: number) => (
               <button
                 key={index}
@@ -145,7 +148,7 @@ const Table: React.FC<TableProps> = () => {
           </nav>
         </Suspense>
       )}
-    </div>
+    </section>
   );
 };
 
