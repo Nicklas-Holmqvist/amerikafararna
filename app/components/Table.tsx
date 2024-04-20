@@ -40,16 +40,11 @@ const Table: React.FC<TableProps> = () => {
 
   useEffect(() => {
     if (currentPage === 0 || (currentPage === null && searchParam === null)) {
-      getData(1, '*');
+      getData(1, '');
     } else {
       if (searchParam === null) getData(currentPage, '');
       else getData(currentPage, searchParam);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    getData(currentPage, searchParam!);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageParam, searchParam]);
 
