@@ -46,10 +46,10 @@ export default async function Record({ params: { id } }: RecordProps) {
 
   return (
     <main className="p-24 pt-12 max-w-[1200px] m-auto">
-      <h3 className="text-xl font-bold pb-3">
+      <h3 className="text-md font-bold pb-3">
         {data.first_name} {data.last_name}
       </h3>
-      <section className="flex flex-row justify-between w-100">
+      <section className="flex flex-row justify-between w-100 text-sm">
         <div className="flex-1">
           <dl className="flex flex-row pb-1">
             <dt className="font-bold pr-1">Födelsedatum:</dt>
@@ -98,8 +98,8 @@ export default async function Record({ params: { id } }: RecordProps) {
           </dl>
         </div>
       </section>
-      <dl className="py-3">
-        <dt className="font-bold pr-1 float-left">Övrig information:</dt>
+      <dl className="py-3 text-sm">
+        <dt className="font-bold pr-1 float-left ">Övrig information:</dt>
         <dd>{data.other === null ? '' : data.other}</dd>
       </dl>
     </main>
