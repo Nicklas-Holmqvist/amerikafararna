@@ -26,11 +26,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
             } else return;
           }}
           value={inputValue}
-          className="w-auto flex-grow pl-2 bg-basic-white border text-sm border text-black placeholder-black"
+          className="w-auto flex-grow pl-4 pt-1 bg-basic-white border text-sm border text-black placeholder-black"
           type="text"
           name="search"
           id="search"
-          placeholder="Sök tex. på förnamn, efternamn, födelse, fader eller plats"
+          placeholder="Sök tex. på för-, efternamn, födelse, fader eller plats"
         />
         <button
           id="search"

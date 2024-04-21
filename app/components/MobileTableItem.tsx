@@ -3,14 +3,19 @@ import { ListOfPersons } from '../page';
 import { useRouter } from 'next/navigation';
 
 interface MobileTableItemProps {
-  titles: string[];
   records: ListOfPersons[];
 }
 
-const MobileTableItem: React.FC<MobileTableItemProps> = ({
-  titles,
-  records,
-}) => {
+const titles = [
+  'Namn',
+  'Född',
+  'Ålder',
+  'Utfl datum',
+  'Utfl plats',
+  'Infl datum',
+];
+
+const MobileTableItem: React.FC<MobileTableItemProps> = ({ records }) => {
   const router = useRouter();
   return (
     <>
@@ -29,9 +34,11 @@ const MobileTableItem: React.FC<MobileTableItemProps> = ({
             ))}
           </tr>
           <tr className="border-l flex flex-col pl-4 pt-[1px]">
-            <td className="px-1">{person.first_name}</td>
-            <td className="px-1">{person.last_name}</td>
+            <td className="px-1">
+              {person.first_name} {person.last_name}
+            </td>
             <td className="px-1">{person.year_of_birth}</td>
+            <td className="px-1">{person.age_when_emigration}</td>
             <td className="px-1">{person.emigration_date}</td>
             <td className="px-1">{person.emigration_from}</td>
             <td className="px-1">{person.immigration_date}</td>

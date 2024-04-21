@@ -8,20 +8,10 @@ import { supabase } from '../lib/supabaseClient';
 import NoSearchResult from './NoSearchResults';
 import { ListOfPersons } from '../page';
 import SearchBar from './SearchBar';
-import MobileTableItem from './MobileTableItem';
-import { useMediaQuery } from 'react-responsive';
 import TableView from './TableView';
+import Pagination from './Pagination';
 
 interface TableProps {}
-
-const titles = [
-  'Förnamn',
-  'Efternamn',
-  'Födelsedatum',
-  'Utfl datum',
-  'Utfl plats',
-  'Infl datum',
-];
 
 const Table: React.FC<TableProps> = () => {
   const router = useRouter();
@@ -60,7 +50,7 @@ const Table: React.FC<TableProps> = () => {
     const { data, count, error } = await supabase
       .from('travellers')
       .select(
-        'id, first_name, last_name, year_of_birth, emigration_from, emigration_date, immigration_date',
+        'id, first_name, last_name, year_of_birth,age_when_emigration, emigration_from, emigration_date, immigration_date',
         { count: 'exact' }
       )
       .or(
@@ -92,7 +82,7 @@ const Table: React.FC<TableProps> = () => {
     getData(1, '');
   };
   return (
-    <section className="max-w-[1200px] flex flex-col m-auto px-12 lg:px-0">
+    <section className="max-w-[1200px] flex flex-col m-auto px-2 sm:px-12 lg:px-0">
       {loading ? (
         ''
       ) : (
@@ -105,24 +95,15 @@ const Table: React.FC<TableProps> = () => {
             resetSearch={resetSearch}
           />
           {records.length !== 0 ? (
-            <TableView titles={titles} records={records} />
+            <TableView records={records} />
           ) : (
             <NoSearchResult />
           )}
-          <nav className="flex flex-row justify-center text-sm">
-            {Array.from({ length: currentPages }, (v, index: number) => (
-              <button
-                key={index}
-                className={`p-2 w-10 h-10 m-1 border ${
-                  Number(currentPage) === index + 1
-                    ? 'bg-green text-basic-white'
-                    : ''
-                }`}
-                onClick={() => handlePagination(index)}>
-                {index + 1}
-              </button>
-            ))}
-          </nav>
+          <Pagination
+            currentPages={currentPages}
+            currentPage={currentPage}
+            handlePagination={handlePagination}
+          />
         </Suspense>
       )}
     </section>
