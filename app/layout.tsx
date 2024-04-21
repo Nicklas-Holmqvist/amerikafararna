@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Domine, DM_Serif_Display } from 'next/font/google';
+import { Domine, DM_Serif_Display, Special_Elite } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 
-const domine = Domine({
-  weight: ['400', '500'],
+const domine = Special_Elite({
+  weight: ['400'],
   subsets: ['latin'],
   variable: '--font-domine',
 });

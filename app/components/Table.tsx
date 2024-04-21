@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense, useCallback } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
@@ -8,17 +8,10 @@ import { supabase } from '../lib/supabaseClient';
 import NoSearchResult from './NoSearchResults';
 import { ListOfPersons } from '../page';
 import SearchBar from './SearchBar';
+import TableView from './TableView';
+import Pagination from './Pagination';
 
 interface TableProps {}
-
-const titles = [
-  'Förnamn',
-  'Efternamn',
-  'Födelsedatum',
-  'Utfl datum',
-  'Utfl plats',
-  'Infl datum',
-];
 
 const Table: React.FC<TableProps> = () => {
   const router = useRouter();
@@ -57,7 +50,7 @@ const Table: React.FC<TableProps> = () => {
     const { data, count, error } = await supabase
       .from('travellers')
       .select(
-        'id, first_name, last_name, year_of_birth, emigration_from, emigration_date, immigration_date',
+        'id, first_name, last_name, year_of_birth,age_when_emigration, emigration_from, emigration_date, immigration_date',
         { count: 'exact' }
       )
       .or(
@@ -89,7 +82,7 @@ const Table: React.FC<TableProps> = () => {
     getData(1, '');
   };
   return (
-    <section className="max-w-[1200px] flex flex-col m-auto px-12 lg:px-0">
+    <section className="max-w-[1200px] flex flex-col m-auto px-2 sm:px-12 lg:px-0">
       {loading ? (
         ''
       ) : (
@@ -102,47 +95,15 @@ const Table: React.FC<TableProps> = () => {
             resetSearch={resetSearch}
           />
           {records.length !== 0 ? (
-            <table className="mb-8 table-auto text-sm">
-              <tr className="text-lg">
-                {titles.map((title, index) => (
-                  <th className="text-start px-2 pb-2" key={index}>
-                    {title}
-                  </th>
-                ))}
-              </tr>
-              {records!.map((person, index) => (
-                <tr
-                  className="border-y  hover:cursor-pointer hover:bg-green hover:text-basic-white"
-                  key={index}
-                  onClick={() =>
-                    router.push(`${window.location.origin}/record/${person.id}`)
-                  }>
-                  <td className="px-2 py-2">{person.first_name}</td>
-                  <td className="px-2 py-2">{person.last_name}</td>
-                  <td className="px-2 py-2">{person.year_of_birth}</td>
-                  <td className="px-2 py-2">{person.emigration_date}</td>
-                  <td className="px-2 py-2">{person.emigration_from}</td>
-                  <td className="px-2 py-2">{person.immigration_date}</td>
-                </tr>
-              ))}
-            </table>
+            <TableView records={records} />
           ) : (
             <NoSearchResult />
           )}
-          <nav className="flex flex-row justify-center text-sm">
-            {Array.from({ length: currentPages }, (v, index: number) => (
-              <button
-                key={index}
-                className={`p-2 w-10 h-10 m-1 border ${
-                  Number(currentPage) === index + 1
-                    ? 'bg-green text-basic-white'
-                    : ''
-                }`}
-                onClick={() => handlePagination(index)}>
-                {index + 1}
-              </button>
-            ))}
-          </nav>
+          <Pagination
+            currentPages={currentPages}
+            currentPage={currentPage}
+            handlePagination={handlePagination}
+          />
         </Suspense>
       )}
     </section>

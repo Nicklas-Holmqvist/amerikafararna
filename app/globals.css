@@ -21,6 +21,7 @@ h1 {
 h1,
 h2,
 th,
+dt,
 button {
   font-family: var(--font-serifDisplay);
 }
@@ -33,10 +34,6 @@ input,
 span {
   font-family: var(--font-domine);
   font-weight: 400;
-}
-
-dl {
-  font-weight: 500;
 }
 
 button {

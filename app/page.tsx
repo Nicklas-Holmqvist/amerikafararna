@@ -30,6 +30,7 @@ export interface ListOfPersons {
   first_name: string;
   last_name: string;
   year_of_birth: string;
+  age_when_emigration: string;
   emigration_from: string;
   emigration_date: string;
   immigration_date: string;
