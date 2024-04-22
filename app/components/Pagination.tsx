@@ -3,7 +3,7 @@
 import { useMediaQuery } from 'react-responsive';
 import React from 'react';
 
-import PaginationMobile from './PaginationMobile';
+import PaginationMobile from './MobilePagination';
 import PointerIcon from './PointerIcon';
 
 interface PaginationProps {
