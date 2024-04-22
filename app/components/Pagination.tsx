@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
-import { LuArrowBigLeft, LuArrowBigRight } from '@metamist/lucide-react';
-import PaginationMobile from './PaginationMobile';
 import { useMediaQuery } from 'react-responsive';
+import React from 'react';
+
+import PaginationMobile from './PaginationMobile';
+import PointerIcon from './PointerIcon';
 
 interface PaginationProps {
   currentPages: number;
@@ -29,14 +30,14 @@ const Pagination: React.FC<PaginationProps> = ({
         />
       ) : (
         <nav className="flex flex-row justify-center text-sm">
-          <span
-            className="pr-4 pt-2"
-            onClick={() => {
-              if (currentPage === 1) return;
-              else handlePagination(currentPage - 2);
-            }}>
-            <LuArrowBigLeft size={30} />
-          </span>
+          <PointerIcon
+            currentPages={currentPages}
+            currentPage={currentPage}
+            handlePagination={handlePagination}
+            direction={'left'}
+            size={64}
+            alt={'bläddra bakåt'}
+          />
           {Array.from({ length: currentPages }, (v, index: number) => (
             <button
               key={index}
@@ -46,19 +47,20 @@ const Pagination: React.FC<PaginationProps> = ({
                   : ''
               }`}
               onClick={() => {
-                handlePagination(index);
+                if (currentPage === index + 1) return;
+                else handlePagination(index);
               }}>
               {index + 1}
             </button>
           ))}
-          <span
-            className="pl-4 pt-2"
-            onClick={() => {
-              if (currentPages === currentPage) return;
-              else handlePagination(currentPage);
-            }}>
-            <LuArrowBigRight size={30} />
-          </span>
+          <PointerIcon
+            currentPages={currentPages}
+            currentPage={currentPage}
+            handlePagination={handlePagination}
+            direction={'right'}
+            size={64}
+            alt={'bläddra framåt'}
+          />
         </nav>
       )}
     </>
