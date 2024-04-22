@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ListOfPersons } from '../page';
 import { Titles } from './TableView';
+import { ListOfPersons } from '@/types/types';
 
 interface DesktopTableViewProps {
   records: ListOfPersons[];

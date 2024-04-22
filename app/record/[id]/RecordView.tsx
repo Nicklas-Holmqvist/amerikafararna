@@ -7,7 +7,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import pointerIcon from '../../../public/images/pointer-icon.svg';
-import { Person } from '@/app/page';
+import { Person } from '@/types/types';
 
 interface RecordViewProps {
   data: Person;
@@ -92,7 +92,8 @@ const RecordView: React.FC<RecordViewProps> = ({ data }) => {
                   <dl className="flex flex-row pb-1">
                     <dt className="pr-1">Ålder vid inflytt:</dt>
                     <dd>
-                      {data.age_when_immigration === null
+                      {data.age_when_immigration === null ||
+                      data.age_when_immigration === undefined
                         ? '-'
                         : `${data.age_when_immigration} år`}
                     </dd>
