@@ -14,10 +14,6 @@ body {
   background-color: var(--color-white);
 }
 
-h1 {
-  font-family: var(--font-serifDisplay);
-}
-
 h1,
 h2,
 p,
@@ -32,8 +28,9 @@ nav,
 dl,
 dd,
 input,
-span {
-  font-family: var(--font-domine);
+span,
+a {
+  font-family: var(--font-specialElite);
   font-weight: 400;
 }
 

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Domine, DM_Serif_Display, Special_Elite } from 'next/font/google';
+import { DM_Serif_Display, Special_Elite } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 
-const domine = Special_Elite({
+const specialElite = Special_Elite({
   weight: ['400'],
   subsets: ['latin'],
-  variable: '--font-domine',
+  variable: '--font-specialElite',
 });
 const serifDisplay = DM_Serif_Display({
   weight: ['400'],
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${serifDisplay.variable} ${domine.variable}`}>
+      <body className={`${serifDisplay.variable} ${specialElite.variable}`}>
         <Header />
         {children}
       </body>

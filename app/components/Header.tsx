@@ -7,7 +7,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <header>
       <Link href={'/'}>
-        <h1 className="text-5xl text-center pt-10">Älekullas Amerikafarare</h1>
+        <h1 className="text-5xl text-center pt-10">Markemigranterna</h1>
       </Link>
     </header>
   );

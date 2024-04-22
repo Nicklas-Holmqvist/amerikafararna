@@ -1,5 +1,6 @@
 import React from 'react';
-import { Person } from '../page';
+
+import { Person } from '@/types/types';
 
 interface MobileRecordProps {
   data: Person;
