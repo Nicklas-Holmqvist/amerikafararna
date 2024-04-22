@@ -50,7 +50,7 @@ const Table: React.FC<TableProps> = () => {
     const { data, count, error } = await supabase
       .from('travellers')
       .select(
-        'id, first_name, last_name, year_of_birth,age_when_emigration, emigration_from, emigration_date, immigration_date',
+        'id, first_name, last_name, year_of_birth,age_when_emigration,age_when_immigration, emigration_from, emigration_date, immigration_date',
         { count: 'exact' }
       )
       .or(

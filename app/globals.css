@@ -20,6 +20,7 @@ h1 {
 
 h1,
 h2,
+p,
 th,
 dt,
 button {
@@ -47,4 +48,18 @@ button:hover {
   background-color: var(--color-green);
   color: var(--color-white);
   border-color: var(--color-white);
+}
+
+dl {
+  font-weight: bold;
+}
+
+dd {
+  padding-left: 0.5rem;
+  padding-top: 3px;
+}
+
+.readMore {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }

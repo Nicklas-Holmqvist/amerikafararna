@@ -1,5 +1,5 @@
-import { LuArrowBigLeft, LuArrowBigRight } from '@metamist/lucide-react';
 import React from 'react';
+import PointerIcon from './PointerIcon';
 
 interface PaginationMobileProps {
   currentPages: number;
@@ -14,14 +14,14 @@ const PaginationMobile: React.FC<PaginationMobileProps> = ({
 }) => {
   return (
     <nav className="flex flex-row justify-center text-sm">
-      <span
-        className="pr-4 pt-2"
-        onClick={() => {
-          if (currentPage === 1) return;
-          else handlePagination(currentPage - 2);
-        }}>
-        <LuArrowBigLeft size={30} />
-      </span>
+      <PointerIcon
+        currentPages={currentPages}
+        currentPage={currentPage}
+        handlePagination={handlePagination}
+        direction={'left'}
+        size={64}
+        alt={'bläddra bakåt'}
+      />
 
       <button
         className={`p-2 w-10 h-10 m-1 border bg-green text-basic-white hover:none'
@@ -31,14 +31,14 @@ const PaginationMobile: React.FC<PaginationMobileProps> = ({
         }}>
         {currentPage}
       </button>
-      <span
-        className="pl-4 pt-2"
-        onClick={() => {
-          if (currentPages === currentPage) return;
-          else handlePagination(currentPage);
-        }}>
-        <LuArrowBigRight size={30} />
-      </span>
+      <PointerIcon
+        currentPages={currentPages}
+        currentPage={currentPage}
+        handlePagination={handlePagination}
+        direction={'right'}
+        size={64}
+        alt={'bläddra framåt'}
+      />
     </nav>
   );
 };
