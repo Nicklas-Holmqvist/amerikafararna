@@ -15,8 +15,6 @@ const MobilePagination: React.FC<MobilePaginationProps> = ({
   const paginationArray = Array.from({ length: currentPages });
 
   const shortPagination = () => {
-    console.log(currentPage);
-    console.log(paginationArray.length);
     if (currentPage === 1) return [1, 2, 3];
     if (currentPage >= paginationArray.length)
       return [currentPage - 2, currentPage - 1, currentPage];
