@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListOfPersons } from '../page';
+import { ListOfPersons } from '@/types/types';
 
 interface MobileTableItemProps {
   records: ListOfPersons[];
