@@ -1,7 +1,7 @@
 import { supabase } from '@/app/lib/supabaseClient';
 import { Metadata } from 'next/types';
 
-import { Person } from '@/app/page';
+import { Person } from '@/types/types';
 import RecordView from './RecordView';
 
 interface RecordProps {

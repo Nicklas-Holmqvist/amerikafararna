@@ -3,7 +3,7 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import MobileTableItem from './MobileTableItem';
-import { ListOfPersons } from '../page';
+import { ListOfPersons } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import DesktopTableView from './DesktopTableView';
 
