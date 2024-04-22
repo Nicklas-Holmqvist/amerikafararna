@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { supabase } from '../lib/supabaseClient';
 import NoSearchResult from './NoSearchResults';
-import { ListOfPersons } from '../page';
+import { ListOfPersons } from '@/types/types';
 import SearchBar from './SearchBar';
 import TableView from './TableView';
 import Pagination from './Pagination';
