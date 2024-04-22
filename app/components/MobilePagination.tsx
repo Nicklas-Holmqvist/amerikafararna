@@ -12,14 +12,16 @@ const MobilePagination: React.FC<MobilePaginationProps> = ({
   currentPage,
   handlePagination,
 }) => {
-  const paginationArray = Array.from({ length: currentPages });
-
   const shortPagination = () => {
-    if (currentPage === 1) return [1, 2, 3];
-    if (currentPage >= paginationArray.length)
-      return [currentPage - 2, currentPage - 1, currentPage];
-    if (currentPage >= 2)
-      return [currentPage - 1, currentPage, currentPage + 1];
+    let pageNumbers = [];
+    for (let i = 1; i <= currentPages; i++) {
+      pageNumbers.push(i);
+    }
+    if (pageNumbers.length <= 3) {
+      return pageNumbers;
+    }
+    if (currentPage <= 2) return pageNumbers.splice(0, 3);
+    if (pageNumbers.length >= 4) return pageNumbers.splice(currentPage - 2, 3);
   };
   return (
     <nav className="flex flex-row justify-center text-sm">
