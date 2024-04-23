@@ -59,7 +59,7 @@ const Table: React.FC<TableProps> = () => {
       getData(currentPage, searchParam!);
     } else return;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pageParam]);
+  }, [pageParam, searchParam]);
 
   const getData = useCallback(
     async (page: number, search: string) => {
