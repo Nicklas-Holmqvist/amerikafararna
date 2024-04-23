@@ -20,7 +20,6 @@ import Pagination from './Pagination';
 interface TableProps {}
 
 const Table: React.FC<TableProps> = () => {
-  const firstLoad = useRef(false);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -36,6 +35,9 @@ const Table: React.FC<TableProps> = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>('');
 
+  const firstLoad = useRef(false);
+  const paginationWasRun = useRef(false);
+
   const currentPages = paginationPages;
 
   useEffect(() => {
@@ -46,51 +48,69 @@ const Table: React.FC<TableProps> = () => {
         if (searchParam === null) getData(currentPage, '');
         else getData(currentPage, searchParam);
       }
-      firstLoad.current = true;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pageParam, searchParam]);
+  }, []);
+
+  useEffect(() => {
+    if (paginationWasRun.current === false && firstLoad.current === true) {
+      firstLoad.current = false;
+      getData(currentPage, searchParam!);
+    } else return;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageParam]);
 
   const getData = useCallback(
     async (page: number, search: string) => {
-      setLoading(true);
-      const indexOfLastItem = page * pageSize;
-      const indexOfFirstItem = indexOfLastItem - pageSize;
-      router.push(`${pathname}?page=${page}&search=${search}`);
+      if (firstLoad.current === false) {
+        setLoading(true);
+        const indexOfLastItem = page * pageSize;
+        const indexOfFirstItem = indexOfLastItem - pageSize;
+        router.push(`${pathname}?page=${page}&search=${search}`);
 
-      const { data, count, error } = await supabase
-        .from('travellers')
-        .select(
-          'id, first_name, last_name, year_of_birth,age_when_emigration,age_when_immigration, emigration_from, emigration_date, immigration_date',
-          { count: 'exact' }
-        )
-        .or(
-          `first_name.ilike.%${search}%,last_name.ilike.%${search}%,year_of_birth.ilike.%${search}%,father.ilike.%${search}%,emigration_from.ilike.%${search}%,other.ilike.%${search}%`
-        )
-        .order('first_name', { ascending: true })
-        .order('last_name')
-        .limit(pageSize)
-        .range(indexOfFirstItem, indexOfLastItem);
-      if (error) {
-        setRecords([]);
-      }
-      setPaginationsPages(Math.ceil(count! / pageSize));
-      setRecords(data!);
-      setLoading(false);
+        const { data, count, error } = await supabase
+          .from('travellers')
+          .select(
+            'id, first_name, last_name, year_of_birth,age_when_emigration,age_when_immigration, emigration_from, emigration_date, immigration_date',
+            { count: 'exact' }
+          )
+          .or(
+            `first_name.ilike.%${search}%,last_name.ilike.%${search}%,year_of_birth.ilike.%${search}%,father.ilike.%${search}%,emigration_from.ilike.%${search}%,other.ilike.%${search}%`
+          )
+          .order('first_name', { ascending: true })
+          .order('last_name')
+          .limit(pageSize)
+          .range(indexOfFirstItem, indexOfLastItem);
+        if (error) {
+          setRecords([]);
+        }
+        setPaginationsPages(Math.ceil(count! / pageSize));
+        setRecords(data!);
+        setLoading(false);
+        firstLoad.current = true;
+        paginationWasRun.current = false;
+        return;
+      } else return;
     },
     [pathname, router]
   );
 
   const handlePagination = useCallback(
     (page: number) => {
-      if (page === 0) return getData(page + 1, searchParam!);
-      getData(page + 1, searchParam!);
+      paginationWasRun.current = true;
+      if (page + 1 === 0) return getData(page + 1, searchParam!);
+      else {
+        firstLoad.current = false;
+        getData(page + 1, searchParam!);
+        return;
+      }
     },
     [getData, searchParam]
   );
 
   const handleSearchEvent = useCallback(
     (inputValue: string) => {
+      firstLoad.current = false;
       getData(1, inputValue);
       setSearchValue('');
     },
@@ -98,6 +118,7 @@ const Table: React.FC<TableProps> = () => {
   );
 
   const resetSearch = useCallback(() => {
+    firstLoad.current = false;
     getData(1, '');
   }, [getData]);
 
