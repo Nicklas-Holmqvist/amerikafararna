@@ -29,6 +29,7 @@ const titles: Titles = {
   emigration_from: 'Utfl plats',
   immigration_date: 'Infl datum',
 };
+
 const TableView: React.FC<TableViewProps> = ({ records }) => {
   const router = useRouter();
   const mobileView = useMediaQuery({
