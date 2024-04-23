@@ -8,7 +8,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
     <header>
       <Link href={'/'}>
         <h1 className="text-4xl text-center pt-10 sm:text-5xl">
-          Markemigranterna
+          Markemigranter
         </h1>
       </Link>
     </header>
