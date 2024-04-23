@@ -1,6 +1,12 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, {
+  useState,
+  useEffect,
+  Suspense,
+  useCallback,
+  useRef,
+} from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
@@ -14,6 +20,7 @@ import Pagination from './Pagination';
 interface TableProps {}
 
 const Table: React.FC<TableProps> = () => {
+  const firstLoad = useRef(false);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -24,7 +31,7 @@ const Table: React.FC<TableProps> = () => {
 
   const pageSize: number = 25;
 
-  const [paginationPages, setPaginationsPages] = useState<number>(20);
+  const [paginationPages, setPaginationsPages] = useState<number>(0);
   const [records, setRecords] = useState<ListOfPersons[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>('');
@@ -32,55 +39,68 @@ const Table: React.FC<TableProps> = () => {
   const currentPages = paginationPages;
 
   useEffect(() => {
-    if (currentPage === 0 || (currentPage === null && searchParam === null)) {
-      getData(1, '');
-    } else {
-      if (searchParam === null) getData(currentPage, '');
-      else getData(currentPage, searchParam);
+    if (firstLoad.current === false) {
+      if (currentPage === 0 || (currentPage === null && searchParam === null)) {
+        getData(1, '');
+      } else {
+        if (searchParam === null) getData(currentPage, '');
+        else getData(currentPage, searchParam);
+      }
+      firstLoad.current = true;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageParam, searchParam]);
 
-  async function getData(page: number, search: string) {
-    setLoading(true);
-    const indexOfLastItem = page * pageSize;
-    const indexOfFirstItem = indexOfLastItem - pageSize;
-    router.push(`${pathname}?page=${page}&search=${search}`);
+  const getData = useCallback(
+    async (page: number, search: string) => {
+      setLoading(true);
+      const indexOfLastItem = page * pageSize;
+      const indexOfFirstItem = indexOfLastItem - pageSize;
+      router.push(`${pathname}?page=${page}&search=${search}`);
 
-    const { data, count, error } = await supabase
-      .from('travellers')
-      .select(
-        'id, first_name, last_name, year_of_birth,age_when_emigration,age_when_immigration, emigration_from, emigration_date, immigration_date',
-        { count: 'exact' }
-      )
-      .or(
-        `first_name.ilike.%${search}%,last_name.ilike.%${search}%,year_of_birth.ilike.%${search}%,father.ilike.%${search}%,emigration_from.ilike.%${search}%,other.ilike.%${search}%`
-      )
-      .order('first_name', { ascending: true })
-      .order('last_name')
-      .limit(pageSize)
-      .range(indexOfFirstItem, indexOfLastItem);
-    if (error) {
-      setRecords([]);
-    }
-    setPaginationsPages(Math.ceil(count! / pageSize));
-    setRecords(data!);
-    setLoading(false);
-  }
+      const { data, count, error } = await supabase
+        .from('travellers')
+        .select(
+          'id, first_name, last_name, year_of_birth,age_when_emigration,age_when_immigration, emigration_from, emigration_date, immigration_date',
+          { count: 'exact' }
+        )
+        .or(
+          `first_name.ilike.%${search}%,last_name.ilike.%${search}%,year_of_birth.ilike.%${search}%,father.ilike.%${search}%,emigration_from.ilike.%${search}%,other.ilike.%${search}%`
+        )
+        .order('first_name', { ascending: true })
+        .order('last_name')
+        .limit(pageSize)
+        .range(indexOfFirstItem, indexOfLastItem);
+      if (error) {
+        setRecords([]);
+      }
+      setPaginationsPages(Math.ceil(count! / pageSize));
+      setRecords(data!);
+      setLoading(false);
+    },
+    [pathname, router]
+  );
 
-  const handlePagination = (page: number) => {
-    if (page === 0) return getData(page + 1, searchParam!);
-    getData(page + 1, searchParam!);
-  };
+  const handlePagination = useCallback(
+    (page: number) => {
+      if (page === 0) return getData(page + 1, searchParam!);
+      getData(page + 1, searchParam!);
+    },
+    [getData, searchParam]
+  );
 
-  const handleSearchEvent = (inputValue: string) => {
-    getData(1, inputValue);
-    setSearchValue('');
-  };
+  const handleSearchEvent = useCallback(
+    (inputValue: string) => {
+      getData(1, inputValue);
+      setSearchValue('');
+    },
+    [getData]
+  );
 
-  const resetSearch = () => {
+  const resetSearch = useCallback(() => {
     getData(1, '');
-  };
+  }, [getData]);
+
   return (
     <section className="max-w-[1200px] flex flex-col m-auto px-2 sm:px-12 lg:px-0">
       {loading ? (
