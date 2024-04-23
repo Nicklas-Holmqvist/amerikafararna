@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <main className="w-100 flex flex-col items-center justify-between py-8 px-4">
-      <h2 className="text-center text-3xl pt-20 pb-10">
+      <h2 className="text-center text-2xl sm:text-3xl pt-4 sm:pt-20 pb-10">
         Välkommen till Markemigranterna
       </h2>
       <p className="max-w-[80ch] pb-10">
