@@ -57,6 +57,8 @@ dd {
 }
 
 .readMore {
+  text-align: center;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  font-size: 0.7rem;
 }

@@ -30,7 +30,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           type="text"
           name="search"
           id="search"
-          placeholder="Sök tex. på för-, efternamn, födelse, fader eller plats"
+          placeholder="För-, efternamn, födelse, fader eller utfl plats"
         />
         <button
           id="search"
