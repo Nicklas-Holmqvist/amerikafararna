@@ -52,7 +52,7 @@ const DesktopTableView: React.FC<DesktopTableViewProps> = ({
           </td>
           <td className="px-2 pt-2 pb-1 border-r">{person.emigration_from}</td>
           <td className="px-2 pt-2 pb-1 border-l text-center">
-            {controlRecordData(person.emigration_from)}
+            {controlRecordData(person.immigration_date)}
           </td>
         </tr>
       ))}
