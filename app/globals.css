@@ -62,3 +62,16 @@ dd {
   text-orientation: upright;
   font-size: 0.7rem;
 }
+
+.dropIn {
+  animation: dropIn 0.5s forwards;
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

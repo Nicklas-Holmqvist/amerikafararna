@@ -27,7 +27,8 @@ const MobileTableItem: React.FC<MobileTableItemProps> = ({
         <div
           onClick={() => handleCardEvent(person.id)}
           key={index}
-          className="border mb-4 table-auto text-sm flex flex-row hover:cursor-pointer hover:bg-green hover:text-basic-white hover:shadow-md p-4">
+          className="border mb-4 table-auto text-sm flex flex-row transition duration-150 hover:cursor-pointer hover:bg-green hover:text-basic-white hover:shadow-md p-4 dropIn opacity-0"
+          style={{ animationDelay: `${index * 0.05}s` }}>
           <div className="flex flex-col h-100 justify-between">
             <div className="w-3 h-3 border-2 rounded-full bg-basic-white mt-8"></div>
             <div className="w-3 h-3 border-2 rounded-full bg-basic-white mb-8"></div>

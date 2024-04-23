@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Table from '../components/Table';
 
 export const metadata: Metadata = {
-  title: 'Älekullas Amerikafarare',
+  title: 'Markemigranter',
   description:
     'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
 };

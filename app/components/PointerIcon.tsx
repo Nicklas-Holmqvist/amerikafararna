@@ -22,7 +22,7 @@ const PointerIcon: React.FC<PointerIconProps> = ({
 }) => {
   return (
     <Image
-      className={`pl-4 ${
+      className={`pl-4 transition duration-150 ${
         direction === 'left'
           ? ' scale-x-[-1] hover:-translate-x-1'
           : 'hover:translate-x-1'

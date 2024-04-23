@@ -35,7 +35,8 @@ const DesktopTableView: React.FC<DesktopTableViewProps> = ({
       </tr>
       {records!.map((person, index) => (
         <tr
-          className="border-y hover:cursor-pointer hover:bg-green hover:text-basic-white text-sm"
+          className={`border-y hover:cursor-pointer transition duration-150 hover:bg-green hover:text-basic-white text-sm dropIn opacity-0`}
+          style={{ animationDelay: `${index * 0.02}s` }}
           key={index}
           onClick={() => handleCardEvent(person.id)}>
           <td className="px-2 pt-2 pb-1 border-r">
