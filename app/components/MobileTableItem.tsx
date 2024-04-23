@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { controlRecordData } from '../utils/controlRecordData';
 import { ListOfPersons } from '@/types/types';
 
 interface MobileTableItemProps {
@@ -27,10 +29,10 @@ const MobileTableItem: React.FC<MobileTableItemProps> = ({
           key={index}
           className="border mb-4 table-auto text-sm flex flex-row hover:cursor-pointer hover:bg-green hover:text-basic-white hover:shadow-md p-4">
           <div className="flex flex-col h-100 justify-between">
-            <div className="w-3 h-3 border-2 rounded-full bg-basic-white"></div>
-            <div className="w-3 h-3 border-2 rounded-full bg-basic-white"></div>
+            <div className="w-3 h-3 border-2 rounded-full bg-basic-white mt-8"></div>
+            <div className="w-3 h-3 border-2 rounded-full bg-basic-white mb-8"></div>
           </div>
-          <table className="flex flex-row pl-4">
+          <table className="flex flex-row pl-6">
             <tr className="text-md flex flex-col pr-4">
               {titles.map((title, index) => (
                 <th className="text-start px-1" key={index}>
@@ -44,21 +46,16 @@ const MobileTableItem: React.FC<MobileTableItemProps> = ({
               </td>
               <td className="px-1">{person.year_of_birth}</td>
               <td className="px-1">
-                {' '}
-                {person.age_when_emigration !== null
-                  ? person.age_when_emigration
-                  : person.age_when_immigration}
+                {controlRecordData(person.age_when_emigration)}
               </td>
               <td className="px-1">
-                {person.emigration_date === null ? '-' : person.emigration_date}
+                {controlRecordData(person.emigration_date)}
               </td>
               <td className="px-1">
-                {person.emigration_from === null ? '-' : person.emigration_from}
+                {controlRecordData(person.emigration_from)}
               </td>
               <td className="px-1">
-                {person.immigration_date === null
-                  ? '-'
-                  : person.immigration_date}
+                {controlRecordData(person.immigration_date)}
               </td>
             </tr>
           </table>

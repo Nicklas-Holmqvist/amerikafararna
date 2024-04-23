@@ -3,8 +3,8 @@
 import { useMediaQuery } from 'react-responsive';
 import React from 'react';
 
-import PaginationMobile from './MobilePagination';
-import PointerIcon from './PointerIcon';
+import DesktopPagination from './DesktopPagination';
+import MobilePagination from './MobilePagination';
 
 interface PaginationProps {
   currentPages: number;
@@ -23,45 +23,17 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <>
       {mobileView ? (
-        <PaginationMobile
+        <MobilePagination
           currentPages={currentPages}
           currentPage={currentPage}
           handlePagination={handlePagination}
         />
       ) : (
-        <nav className="flex flex-row justify-center text-sm">
-          <PointerIcon
-            currentPages={currentPages}
-            currentPage={currentPage}
-            handlePagination={handlePagination}
-            direction={'left'}
-            size={64}
-            alt={'bläddra bakåt'}
-          />
-          {Array.from({ length: currentPages }, (v, index: number) => (
-            <button
-              key={index}
-              className={`p-2 w-10 h-10 m-1 border ${
-                Number(currentPage) === index + 1
-                  ? 'bg-green text-basic-white'
-                  : ''
-              }`}
-              onClick={() => {
-                if (currentPage === index + 1) return;
-                else handlePagination(index);
-              }}>
-              {index + 1}
-            </button>
-          ))}
-          <PointerIcon
-            currentPages={currentPages}
-            currentPage={currentPage}
-            handlePagination={handlePagination}
-            direction={'right'}
-            size={64}
-            alt={'bläddra framåt'}
-          />
-        </nav>
+        <DesktopPagination
+          currentPages={currentPages}
+          currentPage={currentPage}
+          handlePagination={handlePagination}
+        />
       )}
     </>
   );

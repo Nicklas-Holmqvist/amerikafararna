@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import MobileTableItem from './MobileTableItem';
-import { ListOfPersons } from '@/types/types';
 import { useRouter } from 'next/navigation';
+import React from 'react';
+
+import { ListOfPersons } from '@/types/types';
 import DesktopTableView from './DesktopTableView';
+import MobileTableItem from './MobileTableItem';
 
 interface TableViewProps {
   records: ListOfPersons[];
@@ -31,7 +32,7 @@ const titles: Titles = {
 const TableView: React.FC<TableViewProps> = ({ records }) => {
   const router = useRouter();
   const mobileView = useMediaQuery({
-    query: '(max-width: 1024px)',
+    query: '(max-width: 1200px)',
   });
 
   const handleCardEvent = (id: string) => {

@@ -2,28 +2,17 @@ import React from 'react';
 
 import PointerIcon from './PointerIcon';
 
-interface MobilePaginationProps {
+interface DesktopPaginationProps {
   currentPages: number;
   currentPage: number;
   handlePagination: (page: number) => void;
 }
 
-const MobilePagination: React.FC<MobilePaginationProps> = ({
+const DesktopPagination: React.FC<DesktopPaginationProps> = ({
   currentPages,
   currentPage,
   handlePagination,
 }) => {
-  const shortPagination = () => {
-    let pageNumbers = [];
-    for (let i = 1; i <= currentPages; i++) {
-      pageNumbers.push(i);
-    }
-    if (pageNumbers.length <= 3) {
-      return pageNumbers;
-    }
-    if (currentPage <= 2) return pageNumbers.splice(0, 3);
-    if (pageNumbers.length >= 4) return pageNumbers.splice(currentPage - 2, 3);
-  };
   return (
     <nav className="flex flex-row justify-center text-sm">
       <PointerIcon
@@ -34,19 +23,17 @@ const MobilePagination: React.FC<MobilePaginationProps> = ({
         size={64}
         alt={'bläddra bakåt'}
       />
-      {shortPagination()?.map((pagination, index) => (
+      {Array.from({ length: currentPages }, (v, index: number) => (
         <button
           key={index}
           className={`p-2 w-10 h-10 m-1 border ${
-            Number(currentPage) === pagination
-              ? 'bg-green text-basic-white'
-              : ''
+            Number(currentPage) === index + 1 ? 'bg-green text-basic-white' : ''
           }`}
           onClick={() => {
-            if (currentPage === pagination) return;
-            else handlePagination(pagination - 1);
+            if (currentPage === index + 1) return;
+            else handlePagination(index);
           }}>
-          {pagination}
+          {index + 1}
         </button>
       ))}
       <PointerIcon
@@ -61,4 +48,4 @@ const MobilePagination: React.FC<MobilePaginationProps> = ({
   );
 };
 
-export default MobilePagination;
+export default DesktopPagination;

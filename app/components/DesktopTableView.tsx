@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Titles } from './TableView';
+import { controlRecordData } from '../utils/controlRecordData';
 import { ListOfPersons } from '@/types/types';
+import { Titles } from './TableView';
 
 interface DesktopTableViewProps {
   records: ListOfPersons[];
@@ -44,16 +45,14 @@ const DesktopTableView: React.FC<DesktopTableViewProps> = ({
             {person.year_of_birth}
           </td>
           <td className="px-2 pt-2 pb-1 border-r text-center">
-            {person.age_when_emigration !== null
-              ? person.age_when_emigration
-              : person.age_when_immigration}
+            {controlRecordData(person.age_when_emigration)}
           </td>
           <td className="px-2 pt-2 pb-1 border-r text-center">
             {person.emigration_date}
           </td>
           <td className="px-2 pt-2 pb-1 border-r">{person.emigration_from}</td>
           <td className="px-2 pt-2 pb-1 border-l text-center">
-            {person.immigration_date}
+            {controlRecordData(person.emigration_from)}
           </td>
         </tr>
       ))}

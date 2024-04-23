@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Person } from '@/types/types';
+import { controlRecordData } from '../utils/controlRecordData';
 
 interface MobileRecordProps {
   data: Person;
@@ -38,13 +39,11 @@ const MobileRecord: React.FC<MobileRecordProps> = ({ data }) => {
         <div className="flex-1">
           <dl className="flex flex-row pb-1">
             <dt className="pr-1">Far:</dt>
-            <dd> {data.father !== null ? data.father : '-'}</dd>
+            <dd>{controlRecordData(data.father)}</dd>
           </dl>
           <dl className="flex flex-row pb-1">
             <dt className="pr-1">Faderns titel:</dt>
-            <dd>
-              {data.title_of_father !== null ? data.title_of_father : '-'}
-            </dd>
+            <dd>{controlRecordData(data.title_of_father)}</dd>
           </dl>
         </div>
       </div>
@@ -53,11 +52,7 @@ const MobileRecord: React.FC<MobileRecordProps> = ({ data }) => {
           <div className="flex-1">
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Ålder vid utflytt:</dt>
-              <dd>
-                {data.age_when_emigration === null
-                  ? '-'
-                  : `${data.age_when_emigration} år`}
-              </dd>
+              <dd>{controlRecordData(data.age_when_emigration)}</dd>
             </dl>
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Utflyttningsår:</dt>
@@ -69,42 +64,28 @@ const MobileRecord: React.FC<MobileRecordProps> = ({ data }) => {
             </dl>
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Utflyttat till:</dt>
-              <dd>
-                {data.emigration_destination === null
-                  ? 'Ej angivet'
-                  : data.emigration_destination}
-              </dd>
+              <dd>{controlRecordData(data.emigration_destination)}</dd>
             </dl>
           </div>
           <div className="flex-1 pt-4">
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Ålder vid inflytt:</dt>
-              <dd>
-                {data.age_when_immigration === null
-                  ? '-'
-                  : `${data.age_when_immigration} år`}
-              </dd>
+              <dd>{controlRecordData(data.age_when_immigration)}</dd>
             </dl>
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Inflyttningsår:</dt>
-              <dd>
-                {data.immigration_date === null ? '-' : data.immigration_date}
-              </dd>
+              <dd>{controlRecordData(data.immigration_date)}</dd>
             </dl>
             <dl className="flex flex-row pb-1">
               <dt className="pr-1">Inflyttningsplats:</dt>
-              <dd>
-                {data.immigration_destination === null
-                  ? '-'
-                  : data.immigration_destination}
-              </dd>
+              <dd>{controlRecordData(data.immigration_destination)}</dd>
             </dl>
           </div>
         </div>
       </div>
       <dl className="text-md">
         <dt className="pr-1 float-left ">Övrig information:</dt>
-        <dd>{data.other === null ? '' : data.other}</dd>
+        <dd>{controlRecordData(data.other)}</dd>
       </dl>
     </section>
   );
