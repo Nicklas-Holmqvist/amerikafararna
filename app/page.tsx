@@ -37,7 +37,7 @@ export default async function Home() {
       </p>
       <Link
         className="border p-2 pt-3 hover:bg-green hover:text-basic-white"
-        href={'/list'}>
+        href={'/list?page=1&search='}>
         Sök i listan
       </Link>
     </main>

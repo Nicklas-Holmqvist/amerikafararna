@@ -54,6 +54,7 @@ const Table: React.FC<TableProps> = () => {
 
   useEffect(() => {
     if (paginationWasRun.current === false && firstLoad.current === true) {
+      if (searchParam === null) return;
       firstLoad.current = false;
       getData(currentPage, searchParam!);
     } else return;
