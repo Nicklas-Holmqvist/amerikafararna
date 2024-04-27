@@ -1,0 +1,427 @@
+[
+  { "id": 1, "name": "Alvshult", "lat": 57.311358, "lng": 12.763058 },
+  {
+    "id": 2,
+    "name": "Anabäckshult Lillegård",
+    "lat": 57.357588,
+    "lng": 12.752273
+  },
+  {
+    "id": 3,
+    "name": "Anabäckshult Storegård",
+    "lat": 57.355609,
+    "lng": 12.752541
+  },
+  {
+    "id": 4,
+    "name": "Attleboro, Massachusetts",
+    "lat": 41.944546,
+    "lng": -71.285606
+  },
+  {
+    "id": 5,
+    "name": "Backen, Gäddarp Övregård",
+    "lat": 57.346498,
+    "lng": 12.719636
+  },
+  {
+    "id": 6,
+    "name": "Björkekullen (Getakullen), Skållared",
+    "lat": 57.325279,
+    "lng": 12.793091
+  },
+  {
+    "id": 7,
+    "name": "Björkelid, Anabäckshult Lillegård",
+    "lat": 57.368327,
+    "lng": 12.768152
+  },
+  {
+    "id": 8,
+    "name": "Björkelund, Gäddarp Nedergård",
+    "lat": 57.330031,
+    "lng": 12.707384
+  },
+  { "id": 9, "name": "Björnås", "lat": 57.338034, "lng": 12.724957 },
+  { "id": 10, "name": "Bloomfield", "lat": 40.807129, "lng": -74.195999 },
+  { "id": 11, "name": "Bocksås", "lat": 57.332874, "lng": 12.677085 },
+  { "id": 12, "name": "Bostebygd", "lat": 57.312346, "lng": 12.723048 },
+  {
+    "id": 13,
+    "name": "Boston Massachusetts",
+    "lat": 42.360081,
+    "lng": -71.058884
+  },
+  {
+    "id": 14,
+    "name": "Boston, Massachusetts",
+    "lat": 42.360081,
+    "lng": -71.058884
+  },
+  {
+    "id": 15,
+    "name": "Brastorp Lillegård",
+    "lat": 57.361129,
+    "lng": 12.730021
+  },
+  {
+    "id": 16,
+    "name": "Brastorp Mellangård",
+    "lat": 57.365515,
+    "lng": 12.729163
+  },
+  {
+    "id": 17,
+    "name": "Brastorp Nedergård",
+    "lat": 57.364937,
+    "lng": 12.736094
+  },
+  {
+    "id": 18,
+    "name": "Bridgeport Connecticut",
+    "lat": 41.179192,
+    "lng": -73.189484
+  },
+  {
+    "id": 19,
+    "name": "Bridgeport, Connecticut",
+    "lat": 41.179192,
+    "lng": -73.189484
+  },
+  {
+    "id": 20,
+    "name": "Bridgeport, Fairfield, Connecticut",
+    "lat": 41.179192,
+    "lng": -73.189484
+  },
+  {
+    "id": 21,
+    "name": "Bristol, Connecticut",
+    "lat": 41.671764,
+    "lng": -72.949272
+  },
+  {
+    "id": 22,
+    "name": "Brobacken, Karlabo",
+    "lat": 57.319756,
+    "lng": 12.721524
+  },
+  {
+    "id": 23,
+    "name": "Brockton, Massachusetts",
+    "lat": 42.083302,
+    "lng": -71.019897
+  },
+  {
+    "id": 24,
+    "name": "Brooklyn, New York",
+    "lat": 40.678177,
+    "lng": -73.94416
+  },
+  { "id": 25, "name": "Chicago", "lat": 41.881832, "lng": -87.623177 },
+  {
+    "id": 26,
+    "name": "Cripple Creek, Colorado",
+    "lat": 38.749077,
+    "lng": -105.18306
+  },
+  { "id": 27, "name": "Dal", "lat": 57.317774, "lng": 12.77254 },
+  { "id": 28, "name": "Dal, Älekulla", "lat": 57.317774, "lng": 12.77254 },
+  { "id": 29, "name": "Dunkared", "lat": 57.324621, "lng": 12.750878 },
+  {
+    "id": 30,
+    "name": "East Longmeadow, Massachusetts",
+    "lat": 42.064685,
+    "lng": -72.512932
+  },
+  {
+    "id": 31,
+    "name": "Easton, Bristol, Massachusetts",
+    "lat": 42.02454,
+    "lng": -71.12866
+  },
+  {
+    "id": 32,
+    "name": "Fairfield, Connecticut",
+    "lat": 41.146496,
+    "lng": -73.271111
+  },
+  {
+    "id": 33,
+    "name": "Fogels, Älekulla Lillegård",
+    "lat": 57.322223,
+    "lng": 12.724341
+  },
+  {
+    "id": 34,
+    "name": "Grindbäck, Brastorp Mellangården",
+    "lat": 57.363351,
+    "lng": 12.719765
+  },
+  { "id": 35, "name": "Gäddarp Övergård", "lat": 57.348709, "lng": 12.712727 },
+  { "id": 36, "name": "Gäddarp Övregård", "lat": 57.348709, "lng": 12.712727 },
+  {
+    "id": 37,
+    "name": "Gärdhem, Skållared",
+    "lat": 57.349913,
+    "lng": 12.731105
+  },
+  {
+    "id": 38,
+    "name": "Hallatorpet, Dunkared",
+    "lat": 57.318562,
+    "lng": 12.743014
+  },
+  {
+    "id": 39,
+    "name": "Hartford, Connecticut",
+    "lat": 41.762085,
+    "lng": -72.742012
+  },
+  {
+    "id": 40,
+    "name": "Hartford, Connnecticut",
+    "lat": 41.762085,
+    "lng": -72.742012
+  },
+  { "id": 41, "name": "Holmen", "lat": 57.333425, "lng": 12.755084 },
+  { "id": 42, "name": "Hornås", "lat": 57.332313, "lng": 12.762637 },
+  { "id": 43, "name": "Hökås", "lat": 57.309002, "lng": 12.749505 },
+  { "id": 44, "name": "Hökås, Älekulla", "lat": 57.309002, "lng": 12.749505 },
+  {
+    "id": 45,
+    "name": "Ishpeming, Michigan",
+    "lat": 46.48855,
+    "lng": -87.66764
+  },
+  {
+    "id": 46,
+    "name": "Jamestown, New York",
+    "lat": 42.095554,
+    "lng": -79.238609
+  },
+  {
+    "id": 47,
+    "name": "Jones, Elk, Pennsylvania",
+    "lat": 41.621830846,
+    "lng": -78.492998028
+  },
+  { "id": 48, "name": "Karlabo", "lat": 57.339169, "lng": 12.678652 },
+  { "id": 49, "name": "Killingsås", "lat": 57.349404, "lng": 12.772722 },
+  { "id": 50, "name": "Kinna", "lat": 57.510729, "lng": 12.701333 },
+  { "id": 51, "name": "Kinnared", "lat": 57.299683, "lng": 12.746501 },
+  {
+    "id": 52,
+    "name": "Kinnared, Älekulla",
+    "lat": 57.299683,
+    "lng": 12.746501
+  },
+  {
+    "id": 53,
+    "name": "Kullsbacken, Brastorp Mellangård",
+    "lat": 57.361349,
+    "lng": 12.723799
+  },
+  { "id": 54, "name": "Ljungåsen, Rössås", "lat": 57.339829, "lng": 12.751608 },
+  { "id": 55, "name": "Lunden", "lat": 57.340107, "lng": 12.70762 },
+  { "id": 56, "name": "Lunden, Älekulla", "lat": 57.340107, "lng": 12.70762 },
+  { "id": 57, "name": "Lunnabo", "lat": 57.363536, "lng": 12.744087 },
+  { "id": 58, "name": "Lunnabo, Älekulla", "lat": 57.363536, "lng": 12.744087 },
+  {
+    "id": 59,
+    "name": "Lyckorna, Gäddarp Övregård",
+    "lat": 57.350446,
+    "lng": 12.718692
+  },
+  { "id": 60, "name": "Långåsen, Rössås", "lat": 57.336094, "lng": 12.781364 },
+  {
+    "id": 61,
+    "name": "Lövhem, Älekulla Lillegård",
+    "lat": 57.344171,
+    "lng": 12.712796
+  },
+  {
+    "id": 62,
+    "name": "Manasquan, New Jersey",
+    "lat": 40.113693,
+    "lng": -74.037636
+  },
+  {
+    "id": 63,
+    "name": "Marquette, Michigan",
+    "lat": 46.547581,
+    "lng": -87.395592
+  },
+  {
+    "id": 64,
+    "name": "Marquette, Wisconsin",
+    "lat": 43.740497038,
+    "lng": -89.13749945
+  },
+  {
+    "id": 65,
+    "name": "Meriden, Connecticut",
+    "lat": 41.546616,
+    "lng": -72.78923
+  },
+  {
+    "id": 66,
+    "name": "Middletown, Connecticut",
+    "lat": 41.562794,
+    "lng": -72.68161
+  },
+  {
+    "id": 67,
+    "name": "Militärboställe, Gäddarp Övregård",
+    "lat": 57.348709,
+    "lng": 12.712727
+  },
+  { "id": 68, "name": "Mosshult", "lat": 57.354266, "lng": 12.76062 },
+  {
+    "id": 69,
+    "name": "Naugatuck, Connecticut",
+    "lat": 41.489208,
+    "lng": -73.062599
+  },
+  {
+    "id": 70,
+    "name": "New Britain, Connecticut",
+    "lat": 41.681408,
+    "lng": -72.794746
+  },
+  {
+    "id": 71,
+    "name": "New Britain, Connecticut ",
+    "lat": 41.681408,
+    "lng": -72.794746
+  },
+  {
+    "id": 72,
+    "name": "New Britain, Hartford, Connecticut",
+    "lat": 41.76371,
+    "lng": -72.685097
+  },
+  {
+    "id": 73,
+    "name": "New Brunswick, New Jersey",
+    "lat": 40.488304,
+    "lng": -74.447751
+  },
+  {
+    "id": 74,
+    "name": "New Haven, Connecticut",
+    "lat": 41.310726,
+    "lng": -72.929916
+  },
+  { "id": 75, "name": "New York", "lat": 40.73061, "lng": -73.935242 },
+  {
+    "id": 76,
+    "name": "Newington, Connecticut",
+    "lat": 41.69788,
+    "lng": -72.72371
+  },
+  { "id": 77, "name": "Nockakulla", "lat": 57.325618, "lng": 12.781305 },
+  { "id": 78, "name": "Nordgärdet", "lat": 57.352414, "lng": 12.702277 },
+  {
+    "id": 79,
+    "name": "North Easton, Bristol,  Massachusetts",
+    "lat": 42.02454,
+    "lng": -71.12866
+  },
+  {
+    "id": 80,
+    "name": "North Easton, Massachusetts",
+    "lat": 42.02455,
+    "lng": -71.12867
+  },
+  {
+    "id": 81,
+    "name": "Nyalid, Brastorp Mellangård",
+    "lat": 57.356112,
+    "lng": 12.739903
+  },
+  {
+    "id": 82,
+    "name": "Nybygget, Nordgärdet",
+    "lat": 57.349253,
+    "lng": 12.703135
+  },
+  { "id": 83, "name": "Nyhagen, Urekulla", "lat": 57.31922, "lng": 12.755626 },
+  { "id": 84, "name": "Nyhagen, Urekulla ", "lat": 57.31922, "lng": 12.755626 },
+  {
+    "id": 85,
+    "name": "Nylycke, Gäddarp Nedergård",
+    "lat": 57.343441,
+    "lng": 12.699916
+  },
+  {
+    "id": 86,
+    "name": "Omaha, Douglas, Nebraska",
+    "lat": 41.2563961831767,
+    "lng": -95.9455021926527
+  },
+  {
+    "id": 87,
+    "name": "Plymouth, Massachusetts",
+    "lat": 41.9585715481793,
+    "lng": -70.6677417919424
+  },
+  {
+    "id": 88,
+    "name": "Portland, Connecticut",
+    "lat": 41.5726869778764,
+    "lng": -72.6411922395905
+  },
+  {
+    "id": 89,
+    "name": "Portland,Connecticut",
+    "lat": 41.5726869778764,
+    "lng": -72.6411922395905
+  },
+  {
+    "id": 90,
+    "name": "Providence, Rhode Island",
+    "lat": 41.8247563934496,
+    "lng": -71.417049988914
+  },
+  { "id": 91, "name": "Prästhult", "lat": 57.280435, "lng": 12.758303 },
+  {
+    "id": 92,
+    "name": "Qincy, Norfolk, Massachusetts",
+    "lat": 42.2532674411689,
+    "lng": -71.0021135014169
+  },
+  {
+    "id": 93,
+    "name": "Ridgeway, Pennsylvania",
+    "lat": 41.4201482457981,
+    "lng": -78.7289214327219
+  },
+  {
+    "id": 94,
+    "name": "Rockgord, Illinois",
+    "lat": 42.2710723003969,
+    "lng": -89.0934282675281
+  },
+  { "id": 95, "name": "Rössås", "lat": 57.344541, "lng": 12.75444 },
+  { "id": 96, "name": "Rössås, Älekulla", "lat": 57.344541, "lng": 12.75444 },
+  {
+    "id": 97,
+    "name": "Sherman, New York",
+    "lat": 42.1592820943651,
+    "lng": -79.5955892758947
+  },
+  { "id": 98, "name": "Sjöbacken, Hökås", "lat": 57.303276, "lng": 12.751672 },
+  {
+    "id": 99,
+    "name": "Skogen, Älekulla Lillegård",
+    "lat": 57.324731,
+    "lng": 12.728004
+  },
+  {
+    "id": 100,
+    "name": "Skoghem, Alvshult",
+    "lat": 57.308005,
+    "lng": 12.790382
+  }
+]

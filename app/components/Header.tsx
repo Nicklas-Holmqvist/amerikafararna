@@ -5,12 +5,12 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}) => {
   return (
-    <header>
-      <Link href={'/'}>
-        <h1 className="text-4xl text-center pt-10 sm:text-5xl">
+    <header className=" h-[6rem] flex justify-center m-auto">
+      <h1 className="text-4xl sm:text-5xl content-center">
+        <Link className="header-link" href={'/'}>
           Markemigranter
-        </h1>
-      </Link>
+        </Link>
+      </h1>
     </header>
   );
 };

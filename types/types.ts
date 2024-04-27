@@ -32,3 +32,23 @@ export interface ListOfPersons {
   emigration_date: string;
   immigration_date: string;
 }
+
+export interface MapPlace {
+  id: number;
+  name: string;
+  lat: number;
+  lng: number;
+}
+
+export interface PersonCoordsData {
+  id: number;
+  first_name: string;
+  last_name: string;
+  year_of_birth: string;
+  emigration_from: string;
+  emigration_date: string;
+  emigration_destination: string;
+  immigration_destination: string;
+  immigration_date: string;
+  age_when_emigration: string;
+}
