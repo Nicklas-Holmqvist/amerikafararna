@@ -19,7 +19,8 @@ h2,
 p,
 th,
 dt,
-button {
+button,
+.header-link {
   font-family: var(--font-serifDisplay);
 }
 

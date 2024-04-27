@@ -3,7 +3,6 @@
 import React from 'react';
 import { useRef, useState } from 'react';
 import { IoMdPerson } from 'react-icons/io';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 import Map, {
   Marker,
@@ -53,27 +52,15 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
       destination,
       persons,
     });
-
-    if (mapRef.current !== null) {
-      mapRef.current.flyTo({
-        center: [place.destination.lng, place.destination.lat],
-        zoom: 10,
-      });
-    } else {
-      flyTo({
-        center: [place.destination.lng, place.destination.lat],
-        zoom: 10,
-      });
-    }
   };
 
   return (
-    <main className="w-full h-full">
+    <main className="">
       <Map
         ref={mapRef}
         mapboxAccessToken={mapboxToken}
         mapStyle="mapbox://styles/mapbox/streets-v12"
-        style={{ height: '80rem', width: '100vw' }}
+        style={{ height: 'calc(100vh - 6rem)', width: '100%' }}
         initialViewState={{
           latitude: 57.344345,
           longitude: 12.730043,
