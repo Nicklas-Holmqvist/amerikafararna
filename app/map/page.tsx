@@ -44,7 +44,7 @@ async function getPersonCoords() {
   const { data, error } = await supabase
     .from('travellers')
     .select(
-      'id, first_name, last_name, year_of_birth, age_when_emigration, age_when_immigration, emigration_date, emigration_from, em_from_lat, em_from_lng, emigration_destination, em_to_lat, em_to_lng, immigration_destination, immigration_date, im_to_lat, im_to_lng',
+      'id, first_name, last_name, year_of_birth, age_when_emigration, emigration_date, emigration_from, emigration_destination, immigration_destination, immigration_date',
       { count: 'exact' }
     );
 

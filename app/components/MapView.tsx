@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRef, useState } from 'react';
 import { IoMdPerson } from 'react-icons/io';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import Map, {
   Marker,
@@ -13,6 +14,10 @@ import Map, {
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { MapPlace, PersonCoordsData } from '@/types/types';
+import { useRouter } from 'next/navigation';
+import DesktopMapPopup from './DesktopMapPopup';
+import { useMediaQuery } from 'react-responsive';
+import MobileMapPopup from './MobileMapPopup';
 
 interface MapViewInterface {
   data: { destination: MapPlace; persons: PersonCoordsData[] }[];
@@ -24,6 +29,10 @@ interface SelectMarkerProp {
 }
 
 const MapView: React.FC<MapViewInterface> = ({ data }) => {
+  const router = useRouter();
+  const mobileView = useMediaQuery({
+    query: '(max-width: 1200px)',
+  });
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
   const [selectedMarker, setSelectedMarker] = useState<SelectMarkerProp | null>(
@@ -31,11 +40,14 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
   );
   const mapRef = useRef(null);
 
+  const handleCardEvent = (id: number) => {
+    router.push(`${window.location.origin}/record/${id}`);
+  };
+
   const zoomToSelectedLoc = (e: any, place: SelectMarkerProp) => {
     e.stopPropagation();
     const destination = place.destination;
     const persons: PersonCoordsData[] = place.persons;
-    console.log(place);
 
     setSelectedMarker({
       destination,
@@ -88,22 +100,26 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
         })}
         {selectedMarker ? (
           <Popup
-            offset={25}
+            anchor="center"
             latitude={selectedMarker.destination.lat}
             longitude={selectedMarker.destination.lng}
             onClose={() => {
               setSelectedMarker(null);
             }}
             closeButton={true}>
-            <h3>{selectedMarker.destination.name}</h3>
-            <div>
-              {selectedMarker.persons.map((person, index: number) => (
-                <p key={index}>{person.first_name}</p>
-              ))}
-              <label>Country: </label>
-              <br />
-              <label>Website: </label>
-            </div>
+            {mobileView ? (
+              <MobileMapPopup
+                persons={selectedMarker.persons}
+                handleCardEvent={handleCardEvent}
+                destination={selectedMarker.destination.name}
+              />
+            ) : (
+              <DesktopMapPopup
+                persons={selectedMarker.persons}
+                handleCardEvent={handleCardEvent}
+                destination={selectedMarker.destination.name}
+              />
+            )}
           </Popup>
         ) : null}
       </Map>

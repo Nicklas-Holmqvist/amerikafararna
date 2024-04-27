@@ -46,14 +46,9 @@ export interface PersonCoordsData {
   last_name: string;
   year_of_birth: string;
   emigration_from: string;
-  em_from_lat: number | null;
-  em_from_lng: number | null;
   emigration_date: string;
   emigration_destination: string;
   immigration_destination: string;
-  im_to_lat: number | null;
-  im_to_lng: number | null;
   immigration_date: string;
-  age_when_emigration: number | null;
-  age_when_immigration: number | null;
+  age_when_emigration: string;
 }
