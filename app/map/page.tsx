@@ -1,86 +1,65 @@
-'use client';
+import React from 'react';
+import { supabase } from '@/app/lib/supabaseClient';
 
-import Link from 'next/link';
-
-import Map, {
-  Marker,
-  Popup,
-  NavigationControl,
-  GeolocateControl,
-} from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-
-import airports from '../../data/airports.json';
-import { useRef, useState } from 'react';
-import { IoMdPerson } from 'react-icons/io';
-
+import MapView from '../components/MapView';
+import { MapPlace, PersonCoordsData } from '@/types/types';
 // import classes from './Page.module.css';
 
-export default function Home() {
-  const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+interface RecordProps {}
 
-  const [selectedMarker, setSelectedMarker] = useState(null);
-  const mapRef = useRef(null);
+async function getMapData() {
+  const mapCoords: MapPlace[] = await getMapCoords();
+  const personData: PersonCoordsData[] = await getPersonCoords();
 
-  const zoomToSelectedLoc = (e: any, airport: any, index: any) => {
-    // stop event bubble-up which triggers unnecessary events
-    e.stopPropagation();
-    setSelectedMarker({ airport, index });
-    mapRef.current.flyTo({ center: [airport.lng, airport.lat], zoom: 10 });
-  };
+  const listOfCoordsAndPersons = [];
+  for (const coord of mapCoords) {
+    listOfCoordsAndPersons.push({
+      destination: coord,
+      persons: filteredEmigrants(coord.name, personData),
+    });
+  }
+  return listOfCoordsAndPersons;
+}
 
+function filteredEmigrants(coord: string, personData: PersonCoordsData[]) {
+  return personData.filter((person) => person.emigration_destination === coord);
+}
+
+// function filteredImmigrants(coord, personData) {
+//   return personData.filter(
+//     (person) => person.immigration_destination === coord.name
+//   );
+// }
+
+async function getMapCoords() {
+  const { data, error } = await supabase.from('places').select('*');
+
+  if (error) {
+    throw new Error('Failed to fetch data');
+  }
+  return data;
+}
+
+async function getPersonCoords() {
+  const { data, error } = await supabase
+    .from('travellers')
+    .select(
+      'id, first_name, last_name, year_of_birth, age_when_emigration, age_when_immigration, emigration_date, emigration_from, em_from_lat, em_from_lng, emigration_destination, em_to_lat, em_to_lng, immigration_destination, immigration_date, im_to_lat, im_to_lng',
+      { count: 'exact' }
+    );
+
+  if (error) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return data;
+}
+
+export default async function Record({}: RecordProps) {
+  const data: any = await getMapData();
   return (
-    <main className="w-full h-full">
-      <Map
-        ref={mapRef}
-        mapboxAccessToken={mapboxToken}
-        mapStyle="mapbox://styles/mapbox/streets-v12"
-        style={{ height: '80rem', width: '100vw' }}
-        initialViewState={{
-          latitude: 57.344345,
-          longitude: 12.730043,
-          zoom: 10,
-        }}
-        maxZoom={20}
-        minZoom={3}>
-        <GeolocateControl position="top-left" />
-        <NavigationControl position="top-left" />
-        {airports.map((airport, index) => {
-          return (
-            <Marker
-              key={index}
-              longitude={Number(airport.lng)}
-              latitude={Number(airport.lat)}>
-              <button
-                type="button"
-                className="cursor-pointer"
-                onClick={(e) => zoomToSelectedLoc(e, airport, index)}>
-                {<IoMdPerson size={30} color="tomato" />}
-              </button>
-            </Marker>
-          );
-        })}
-        {selectedMarker ? (
-          <Popup
-            offset={25}
-            latitude={selectedMarker.airport.lat}
-            longitude={selectedMarker.airport.lng}
-            onClose={() => {
-              setSelectedMarker(null);
-            }}
-            closeButton={true}>
-            <h3>{selectedMarker.airport.name}</h3>
-            <div>
-              <label>Code: </label>
-              <span>{selectedMarker.airport.code}</span>
-              <br />
-              <label>Country: </label>
-              <br />
-              <label>Website: </label>
-            </div>
-          </Popup>
-        ) : null}
-      </Map>
+    <main className="">
+      <MapView data={data} />
     </main>
   );
 }
