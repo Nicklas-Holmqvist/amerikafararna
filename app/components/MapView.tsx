@@ -12,25 +12,27 @@ import Map, {
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { MapPlace, PersonCoordsData } from '@/types/types';
+import { MapPlace, TravallersMapData, TravellerData } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import DesktopMapPopup from './DesktopMapPopup';
 import { useMediaQuery } from 'react-responsive';
 import MobileMapPopup from './MobileMapPopup';
 
 interface MapViewInterface {
-  data: { destination: MapPlace; persons: PersonCoordsData[] }[];
+  data: SelectMarkerProp[];
 }
 
 interface SelectMarkerProp {
   destination: MapPlace;
-  persons: PersonCoordsData[];
+  emigrateFrom: TravellerData[];
+  emigrateTo: TravellerData[];
+  immigrateTo: TravellerData[];
 }
 
 const MapView: React.FC<MapViewInterface> = ({ data }) => {
   const router = useRouter();
   const mobileView = useMediaQuery({
-    query: '(max-width: 1200px)',
+    query: '(max-width: 980px)',
   });
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
@@ -46,14 +48,17 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
   const zoomToSelectedLoc = (e: any, place: SelectMarkerProp) => {
     e.stopPropagation();
     const destination = place.destination;
-    const persons: PersonCoordsData[] = place.persons;
+    const emigrateFrom: TravellerData[] = place.emigrateFrom;
+    const emigrateTo: TravellerData[] = place.emigrateTo;
+    const immigrateTo: TravellerData[] = place.immigrateTo;
 
     setSelectedMarker({
       destination,
-      persons,
+      emigrateFrom,
+      emigrateTo,
+      immigrateTo,
     });
   };
-
   return (
     <main className="">
       <Map
@@ -96,13 +101,15 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
             closeButton={true}>
             {mobileView ? (
               <MobileMapPopup
-                persons={selectedMarker.persons}
+                persons={selectedMarker.emigrateTo}
                 handleCardEvent={handleCardEvent}
                 destination={selectedMarker.destination.name}
               />
             ) : (
               <DesktopMapPopup
-                persons={selectedMarker.persons}
+                emigrateFrom={selectedMarker.emigrateFrom}
+                emigrateTo={selectedMarker.emigrateTo}
+                immigrateTo={selectedMarker.immigrateTo}
                 handleCardEvent={handleCardEvent}
                 destination={selectedMarker.destination.name}
               />

@@ -40,15 +40,26 @@ export interface MapPlace {
   lng: number;
 }
 
-export interface PersonCoordsData {
+export interface TravallersMapData {
+  emigrateFrom: TravellerData[];
+  emigrateTo: TravellerData[];
+  immigrantTo: TravellerData[];
+}
+
+export interface TravellerData {
   id: number;
   first_name: string;
   last_name: string;
   year_of_birth: string;
-  emigration_from: string;
+  em_from_lat: string;
+  em_from_lng: string;
   emigration_date: string;
-  emigration_destination: string;
-  immigration_destination: string;
+  emigration_from: string;
+  em_to_lat: string;
+  em_to_lng: string;
   immigration_date: string;
+  im_to_lat: string;
+  im_to_lng: string;
   age_when_emigration: string;
+  age_when_immigration: string;
 }
