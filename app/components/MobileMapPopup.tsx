@@ -1,9 +1,10 @@
 import React from 'react';
-import { PersonCoordsData } from '@/types/types';
+import { TravellerData } from '@/types/types';
+
 import { controlRecordData } from '../utils/controlRecordData';
 
 interface MobileMapPopupProps {
-  persons: PersonCoordsData[];
+  persons: TravellerData[];
   destination: string;
   handleCardEvent: (id: number) => void;
 }
