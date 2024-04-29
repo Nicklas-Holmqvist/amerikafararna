@@ -3,6 +3,14 @@ import { supabase } from '@/app/lib/supabaseClient';
 
 import MapView from '../components/MapView';
 import { MapPlace, TravellerData } from '@/types/types';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Karta över emigranter och immigranter från Marks härad | Markemigranter.se',
+  description:
+    'Se var människor reste ifrån och dels var de landade i Amerika.',
+};
 
 interface RecordProps {}
 
