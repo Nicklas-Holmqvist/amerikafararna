@@ -94,3 +94,12 @@ dd {
   margin-top: 0.5rem;
   padding: 0rem 0.5rem;
 }
+
+.mobileMapPopup > dt,
+dl {
+  font-size: 0.8rem;
+}
+
+.mobileMapPopup > h4 {
+  padding-left: 0.5rem;
+}
