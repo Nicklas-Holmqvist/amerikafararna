@@ -2,7 +2,7 @@ import { Metadata } from 'next/types';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Markemigranter',
+  title: 'Markemigranter | Markemigranter.se',
   description:
     'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
 };

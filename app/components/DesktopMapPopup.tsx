@@ -18,7 +18,7 @@ const DesktopMapPopup: React.FC<DesktopMapPopupProps> = ({
   destination,
 }) => {
   return (
-    <section className="w-[50rem]">
+    <section className="w-[52rem]">
       <h3 className="text-xl pb-2">{destination}</h3>
       <table className="w-full">
         {emigrateFrom.length !== 0 ? (

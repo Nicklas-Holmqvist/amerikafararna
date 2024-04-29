@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { useRef, useState } from 'react';
-import { IoMdPerson } from 'react-icons/io';
+import Image from 'next/image';
+
+import MapIcon from '../../public/images/map-icon.svg';
 
 import Map, {
   Marker,
@@ -12,7 +14,7 @@ import Map, {
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { MapPlace, TravallersMapData, TravellerData } from '@/types/types';
+import { MapPlace, TravellerData } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import DesktopMapPopup from './DesktopMapPopup';
 import { useMediaQuery } from 'react-responsive';
@@ -81,12 +83,13 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
               key={index}
               longitude={place.destination.lng}
               latitude={place.destination.lat}>
-              <button
-                type="button"
-                className="cursor-pointer"
-                onClick={(e) => zoomToSelectedLoc(e, place)}>
-                {<IoMdPerson size={30} color="tomato" />}
-              </button>
+              <Image
+                className="cursor-pointer hover:scale-125 transition"
+                src={MapIcon}
+                alt="kartikon"
+                width={42}
+                onClick={(e) => zoomToSelectedLoc(e, place)}
+              />
             </Marker>
           );
         })}
