@@ -14,7 +14,7 @@ import Map, {
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { MapPlace, TravallersMapData, TravellerData } from '@/types/types';
+import { MapPlace, TravellerData } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import DesktopMapPopup from './DesktopMapPopup';
 import { useMediaQuery } from 'react-responsive';

@@ -1,5 +1,6 @@
 import { Metadata } from 'next/types';
 import { Suspense } from 'react';
+
 import Table from '../components/Table';
 
 export const metadata: Metadata = {
