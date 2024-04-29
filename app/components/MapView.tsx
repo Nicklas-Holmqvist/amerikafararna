@@ -101,7 +101,9 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
             closeButton={true}>
             {mobileView ? (
               <MobileMapPopup
-                persons={selectedMarker.emigrateTo}
+                emigrateFrom={selectedMarker.emigrateFrom}
+                emigrateTo={selectedMarker.emigrateTo}
+                immigrateTo={selectedMarker.immigrateTo}
                 handleCardEvent={handleCardEvent}
                 destination={selectedMarker.destination.name}
               />

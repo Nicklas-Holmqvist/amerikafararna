@@ -55,6 +55,7 @@ export interface TravellerData {
   em_from_lng: string;
   emigration_date: string;
   emigration_from: string;
+  emigration_destination: string;
   em_to_lat: string;
   em_to_lng: string;
   immigration_date: string;
