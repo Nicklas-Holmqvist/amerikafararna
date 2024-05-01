@@ -4,7 +4,7 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 
-import MapIcon from '../../public/images/map-icon.svg';
+import MapIcon from '../../public/images/map-marker.svg';
 
 import Map, {
   Marker,
@@ -95,7 +95,7 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
         })}
         {selectedMarker ? (
           <Popup
-            anchor="center"
+            anchor="top"
             latitude={selectedMarker.destination.lat}
             longitude={selectedMarker.destination.lng}
             onClose={() => {
