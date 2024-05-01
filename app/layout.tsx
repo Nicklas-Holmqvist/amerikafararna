@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Serif_Display, Special_Elite } from 'next/font/google';
+
 import './globals.css';
 import Header from './components/Header';
 
