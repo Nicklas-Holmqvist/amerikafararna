@@ -14,8 +14,9 @@ interface Links {
 
 const links: Links[] = [
   { title: 'Hem', path: '/', href: '/' },
-  { title: 'Lista', path: '/list', href: '/list?page=1&search=' },
+  { title: 'Sök', path: '/list', href: '/list?page=1&search=' },
   { title: 'Karta', path: '/map', href: '/map' },
+  { title: 'Om', path: '/about', href: '/about' },
 ];
 
 const Header: React.FC<HeaderProps> = ({}) => {
@@ -27,13 +28,10 @@ const Header: React.FC<HeaderProps> = ({}) => {
     else return false;
   };
   return (
-    <header
-      className={`h-[6rem]  ${
-        mapPath ? 'bg-green text-basic-white' : 'bg-transparent'
-      }`}>
-      <div className=" h-[6rem] max-w-[1200px] flex content-center justify-between m-auto">
-        <h1 className={`text-4xl sm:text-5xl content-center`}>
-          <Link className="header-link" href={'/'}>
+    <header className={`h-[6rem] border-b-2`}>
+      <div className="border-x-2 h-[6rem] max-w-[1400px] flex content-center justify-between m-auto">
+        <h1 className={`text-4xl sm:text-5xl content-center pl-8`}>
+          <Link className="header-link text-color-green" href={'/'}>
             Markemigranter
           </Link>
         </h1>
@@ -42,10 +40,10 @@ const Header: React.FC<HeaderProps> = ({}) => {
             {links.map((link) => (
               <li
                 key={link.path}
-                className={`my-auto mx-8 p-2 text-md hover:border-b-4 ${
-                  controlPath(link) ? 'border-b-4 pt-3' : ''
+                className={`my-auto mx-8 text-md hover:border-b-2 ${
+                  controlPath(link) ? 'border-b-2 pt-1' : ''
                 } `}>
-                <Link className="" href={link.href}>
+                <Link className="p-4" href={link.href}>
                   {link.title}
                 </Link>
               </li>
