@@ -1,5 +1,5 @@
 import { Metadata } from 'next/types';
-import Link from 'next/link';
+
 import LandingPageStory from './components/LandingPageStory';
 
 export const metadata: Metadata = {
