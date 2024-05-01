@@ -5,8 +5,8 @@ interface PageProps {}
 
 const page: React.FC<PageProps> = ({}) => {
   return (
-    <section className="flex justify-center max-w-[80ch] m-auto">
-      <div className="m-auto sm:pt-20">
+    <section className="flex justify-center max-w-[80ch] m-auto py-10 px-8 md:py-20">
+      <div className="m-auto">
         <h2 className="text-center text-2xl sm:text-3xl pb-10">
           Välkommen till Markemigranterna
         </h2>

@@ -45,7 +45,7 @@ async function getRecord(id: string) {
 export default async function Record({ params: { id } }: RecordProps) {
   const data: Person = await getRecord(id);
   return (
-    <main className="p-8 md:p-24 pt-12 max-w-[1200px] m-auto">
+    <main className="p-8 pt-10 md:p-24 pt-12 max-w-[1200px] m-auto">
       <RecordView data={data} />
     </main>
   );
