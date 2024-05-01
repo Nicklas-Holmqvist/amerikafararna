@@ -5,12 +5,12 @@ import FamilyPhoto from '../../public/images/anders-matilda-1891.jpg';
 
 const LandingPageStory = () => {
   return (
-    <section className="flex flex-col items-center max-w-[75ch] py-10 pb-8 px-4 md:max-w-[96ch] md:flex-none md:py20">
-      <h3 className="text-3xl pb-8 md:pb4 md:text-4xl">
+    <section className="max-w-[95ch] py-10 pb-8 px-4 md:py20">
+      <h3 className="text-3xl pb-8 md:pb4 md:text-4xl text-center md:text-left">
         Anders och Matildas liv
       </h3>
       <Image
-        className="float-none pr-0 pt-0 mr-0 mb-8 md:float-left md:mb-0 md:pr-5 md:mr-1"
+        className="float-none mb-8 md:float-left md:mb-0 md:pr-5 md:mr-1 md:pt-2 m-auto"
         src={FamilyPhoto}
         alt="Fotografi tagits i Amerika med Johanna Matilda, Anna Josefina och Anders Andersson"
         width={400}
