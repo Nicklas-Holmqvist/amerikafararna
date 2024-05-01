@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <main className="w-100 flex-col items-center justify-between py-20">
+    <main className="w-100 flex-col items-center justify-between py-10 md:py-20">
       <section>
         <Suspense>
           <Table />
