@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { DM_Serif_Display, Special_Elite } from 'next/font/google';
 
 import './globals.css';
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
+      <SpeedInsights />
       <body className={`${serifDisplay.variable} ${specialElite.variable}`}>
         <Header />
         {children}
