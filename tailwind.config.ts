@@ -20,6 +20,12 @@ const config: Config = {
         md: '960px',
         lg: '1280px',
       },
+      backgroundImage: {
+        schablon: "url('/images/schablon-flower.svg')",
+      },
+      backgroundSize: {
+        small: '0.8rem',
+      },
     },
   },
   plugins: [],
