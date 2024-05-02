@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { HamburgerButton } from './HamburgerButton';
 import { Links } from './Header';
@@ -19,30 +20,47 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   pathname,
   controlPath,
 }) => {
-  return (
-    <>
-      <HamburgerButton active={drawer} onClick={setDrawer} />
+  const mobileMenuVariant = {
+    opened: {
+      x: '0%',
+      opacity: 1,
+      transition: {
+        delay: 0.15,
+        duration: 0.7,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+    closed: {
+      x: '-100%',
+      opacity: 0,
+      transition: {
+        delay: 0.35,
+        duration: 0.35,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+  };
 
-      {drawer ? (
-        <aside
-          className={`fixed left-0 top-0 h-screen bg-basic-white z-40 ${
-            drawer ? 'right-0 border-r-4' : 'right-100'
-          } `}>
-          <nav className="w-100 h-screen flex flex-col justify-center items-center text-center text-center">
-            {link.map((link, index) => (
-              <a
-                key={index}
-                onClick={setDrawer}
-                className={`h-10 w-16 mx-8 my-8 text-xl ${
-                  controlPath(link, pathname) ? 'border-b-4 pt-1' : ''
-                } `}>
-                <Link href={link.href}>{link.title}</Link>
-              </a>
-            ))}
-          </nav>
-        </aside>
-      ) : null}
-    </>
+  return (
+    <motion.nav initial="closed" animate={drawer ? 'opened' : 'closed'}>
+      <HamburgerButton active={drawer} onClick={setDrawer} />
+      <motion.aside
+        variants={mobileMenuVariant}
+        className={`fixed top-0 left-0 w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-basic-white border-r-4 z-40`}>
+        <motion.div className="flex flex-col bg-basic-white text-center">
+          {link.map((link, index) => (
+            <a
+              key={index}
+              onClick={setDrawer}
+              className={`h-10 w-16 mx-8 my-8 text-xl ${
+                controlPath(link, pathname) ? 'border-b-4 pt-1' : ''
+              } `}>
+              <Link href={link.href}>{link.title}</Link>
+            </a>
+          ))}
+        </motion.div>
+      </motion.aside>
+    </motion.nav>
   );
 };
 
