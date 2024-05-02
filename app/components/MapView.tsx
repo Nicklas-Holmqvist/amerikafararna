@@ -67,7 +67,7 @@ const MapView: React.FC<MapViewInterface> = ({ data }) => {
         ref={mapRef}
         mapboxAccessToken={mapboxToken}
         mapStyle="mapbox://styles/mapbox/streets-v12"
-        style={{ height: 'calc(100vh - 6rem)', width: '100%' }}
+        style={{ height: 'calc(100vh - 6.1rem)', width: '100%' }}
         initialViewState={{
           latitude: 57.344345,
           longitude: 12.730043,

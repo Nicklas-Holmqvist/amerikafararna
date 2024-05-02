@@ -9,7 +9,7 @@ interface DesktopRecordViewProps {
 
 const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
   return (
-    <>
+    <div className="max-w-[1200px] m-auto">
       <h2 className="text-2xl pb-4">
         {data.title} {data.first_name} {data.last_name}
       </h2>
@@ -77,7 +77,7 @@ const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
           <dd>{controlRecordData(data.other)}</dd>
         </dl>
       </section>
-    </>
+    </div>
   );
 };
 

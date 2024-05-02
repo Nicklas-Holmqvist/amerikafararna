@@ -16,7 +16,7 @@ const DesktopTableView: React.FC<DesktopTableViewProps> = ({
   handleCardEvent,
 }) => {
   return (
-    <table className="mb-8 table-auto">
+    <table className=" table-auto">
       <tr className="text-lg h-20">
         <th className="px-2 pb-2 text-center">{titles.name}</th>
         <th className="px-2 pb-2 text-center border-x">

@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   resetSearch,
 }) => {
   return (
-    <section className="flex flex-col mb-8 w-full max-w-[40rem] m-auto">
+    <section className="flex flex-col pb-10 w-full max-w-[40rem] m-auto">
       <div className="flex w-100 h-10 mb-1">
         <input
           onChange={(event) => onInputChange(event.target.value)}

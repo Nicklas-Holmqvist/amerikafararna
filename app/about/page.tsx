@@ -15,7 +15,7 @@ const page: React.FC<PageProps> = ({}) => {
     <main className="m-auto bg-schablon bg-repeat bg-small">
       <section
         className="max-w-[1400px] m-auto bg-basic-white py-10 px-8"
-        style={{ height: 'calc(100vh - 6rem)' }}>
+        style={{ height: 'calc(100vh - 6.1rem)' }}>
         <h2 className="text-center text-2xl sm:text-3xl pb-10">
           Välkommen till Markemigranterna
         </h2>

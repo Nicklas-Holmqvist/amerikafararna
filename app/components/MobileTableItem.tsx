@@ -22,7 +22,7 @@ const MobileTableItem: React.FC<MobileTableItemProps> = ({
   handleCardEvent,
 }) => {
   return (
-    <section className="">
+    <section className="pb-4">
       {records!.map((person, index) => (
         <div
           onClick={() => handleCardEvent(person.id)}

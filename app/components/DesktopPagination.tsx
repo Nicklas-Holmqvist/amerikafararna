@@ -14,7 +14,7 @@ const DesktopPagination: React.FC<DesktopPaginationProps> = ({
   handlePagination,
 }) => {
   return (
-    <nav className="flex flex-row justify-center text-sm">
+    <nav className="flex flex-row justify-center text-sm pt-10">
       <PointerIcon
         currentPages={currentPages}
         currentPage={currentPage}
@@ -26,8 +26,10 @@ const DesktopPagination: React.FC<DesktopPaginationProps> = ({
       {Array.from({ length: currentPages }, (v, index: number) => (
         <button
           key={index}
-          className={`p-2 w-10 h-10 m-1 border transition duration-150 ${
-            Number(currentPage) === index + 1 ? 'bg-green text-basic-white' : ''
+          className={`p-2 w-10 h-10 m-1 border transition duration-150  ${
+            Number(currentPage) === index + 1
+              ? 'bg-green text-basic-white'
+              : 'bg-beige'
           }`}
           onClick={() => {
             if (currentPage === index + 1) return;
