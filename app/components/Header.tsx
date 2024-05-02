@@ -35,14 +35,14 @@ const Header: React.FC<HeaderProps> = ({}) => {
   };
   return (
     <header
-      className={`${
-        mobileView ? 'border-none' : 'border-b-2'
-      } relative h-[6rem]`}>
+      className={`${mobileView ? 'border-none' : 'border-b-2'}  h-[6rem]`}>
       <div
-        className={`h-[6rem] max-w-[1400px] flex content-center justify-between m-auto`}>
+        className={`relative h-[6rem] max-w-[1400px] flex content-center justify-between m-auto`}>
         <h1
           className={`${
-            mobileView ? 'w-full text-center' : ''
+            mobileView
+              ? 'w-full text-center fixed bg-basic-white h-[6rem] border-b-2'
+              : ''
           } text-4xl sm:text-5xl content-center pl-8`}>
           <Link className="header-link text-color-green" href={'/'}>
             Markemigranter
