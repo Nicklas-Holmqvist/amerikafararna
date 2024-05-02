@@ -24,13 +24,16 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       <HamburgerButton active={drawer} onClick={setDrawer} />
 
       {drawer ? (
-        <aside className="fixed left-0 right-0 top-0 h-screen bg-basic-white z-40">
+        <aside
+          className={`fixed left-0 top-0 h-screen bg-basic-white z-40 ${
+            drawer ? 'right-0 border-r-4' : 'right-100'
+          } `}>
           <nav className="w-100 h-screen flex flex-col justify-center items-center text-center text-center">
             {link.map((link, index) => (
               <a
                 key={index}
                 onClick={setDrawer}
-                className={`h-10 w-20 mx-8 my-8 text-2xl ${
+                className={`h-10 w-16 mx-8 my-8 text-xl ${
                   controlPath(link, pathname) ? 'border-b-4 pt-1' : ''
                 } `}>
                 <Link href={link.href}>{link.title}</Link>
