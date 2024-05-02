@@ -34,21 +34,28 @@ const Header: React.FC<HeaderProps> = ({}) => {
     else return false;
   };
   return (
-    <header
-      className={`${mobileView ? 'border-none' : 'border-b-2'}  h-[6rem]`}>
+    <header className={`${mobileView ? 'border-none' : 'border-b-2'}`}>
       <div
-        className={`relative h-[6rem] max-w-[1400px] flex content-center justify-between m-auto`}>
+        className={`relative h-[6rem] max-w-[1400px] flex content-center justify-between m-auto bg-basic-white z-40`}>
         <h1
-          className={`${
+          className={` h-[6rem] ${
             mobileView
-              ? 'w-full text-center fixed bg-basic-white h-[6rem] border-b-2'
+              ? 'w-full text-center fixed border-b-2 bg-basic-white'
               : ''
           } text-4xl sm:text-5xl content-center pl-8`}>
           <Link className="header-link text-color-green" href={'/'}>
             Markemigranter
           </Link>
         </h1>
-        {!mobileView ? (
+        {mobileView ? (
+          <MobileNavigation
+            link={links}
+            drawer={drawer}
+            pathname={pathname}
+            setDrawer={() => setDrawer(!drawer)}
+            controlPath={controlPath}
+          />
+        ) : (
           <nav className="flex">
             <ul className="flex">
               {links.map((link) => (
@@ -64,14 +71,6 @@ const Header: React.FC<HeaderProps> = ({}) => {
               ))}
             </ul>
           </nav>
-        ) : (
-          <MobileNavigation
-            link={links}
-            drawer={drawer}
-            pathname={pathname}
-            setDrawer={() => setDrawer(!drawer)}
-            controlPath={controlPath}
-          />
         )}
       </div>
     </header>

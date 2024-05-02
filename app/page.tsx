@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center justify-between px-4">
+    <main className="flex flex-col items-center justify-between bg-schablon bg-repeat bg-small">
       <LandingPageStory />
     </main>
   );
