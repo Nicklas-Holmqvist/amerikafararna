@@ -11,7 +11,7 @@ const config: Config = {
       'basic-white': '#f1efed',
       green: '#353831',
       black: '#141414',
-      beige: '#a89178',
+      beige: '#F7EADF',
     },
     extend: {
       screens: {

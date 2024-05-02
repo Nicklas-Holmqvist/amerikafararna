@@ -20,7 +20,7 @@ const RecordView: React.FC<RecordViewProps> = ({ data }) => {
     query: '(max-width: 1024px)',
   });
   return (
-    <div>
+    <section className="pt-10 px-8 max-w-[1400px] m-auto">
       <Image
         className="pl-4 pb-4 scale-x-[-1] hover:-translate-x-1 cursor-pointer"
         onClick={() => router.back()}
@@ -34,7 +34,7 @@ const RecordView: React.FC<RecordViewProps> = ({ data }) => {
       ) : (
         <DesktopRecordView data={data} />
       )}
-    </div>
+    </section>
   );
 };
 
