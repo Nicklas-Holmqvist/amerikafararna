@@ -22,7 +22,7 @@ export interface Person {
 }
 
 export interface ListOfPersons {
-  id: string;
+  id: number;
   first_name: string;
   last_name: string;
   year_of_birth: string;

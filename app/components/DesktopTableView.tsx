@@ -7,7 +7,7 @@ import { Titles } from './TableView';
 interface DesktopTableViewProps {
   records: ListOfPersons[];
   titles: Titles;
-  handleCardEvent: (id: string) => void;
+  handleCardEvent: (id: number) => void;
 }
 
 const DesktopTableView: React.FC<DesktopTableViewProps> = ({

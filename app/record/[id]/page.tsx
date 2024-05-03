@@ -1,52 +1,49 @@
 import { supabase } from '@/app/lib/supabaseClient';
 import { Metadata } from 'next/types';
-
-import { Person } from '@/types/types';
 import RecordView from './RecordView';
+import { Person } from '@/types/types';
 
 interface RecordProps {
-  params: { id: string };
+  params: { id: number };
 }
 
 export async function generateMetadata({
   params: { id },
 }: RecordProps): Promise<Metadata> {
-  const record: Person = await getRecord(id);
+  const { data } = await supabase.from('travellers').select().eq('id', id);
 
-  if (record.id !== null) {
+  if (data === null) {
     return {
-      title: `${record.first_name} ${record.last_name} | Älekullas Amerikafarare`,
-      description: `${record.first_name} ${record.last_name} föddes ${
-        record.year_of_birth
-      } i ${record.birthplace}. ${record.first_name} ${
-        record.emigration_date ? 'emigrerade från' : 'immegrerade till'
-      } Älekulla mellan 1880 till 1928`,
+      title: 'Ingen person hittad | Älekullas Amerikafarare',
     };
   }
+  const record: Person = data[0];
+
   return {
-    title: 'Ingen person hittad | Älekullas Amerikafarare',
+    title: `${record.first_name} ${record.last_name} | Älekullas Amerikafarare`,
+    description: `${record.first_name} ${record.last_name} föddes ${
+      record.year_of_birth
+    } i ${record.birthplace}. ${record.first_name} ${
+      record.emigration_date ? 'emigrerade från' : 'immegrerade till'
+    } Älekulla mellan 1880 till 1928`,
   };
 }
 
-async function getRecord(id: string) {
-  const idToNumber = Number(id);
-  const { data, error } = await supabase
-    .from('travellers')
-    .select()
-    .eq('id', idToNumber);
+export async function generateStaticParams(): Promise<any> {
+  const { data } = await supabase.from('travellers').select('id');
 
-  if (error) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return data[0];
+  return data?.map((record) => ({ id: record.id.toString() }));
 }
 
-export default async function Record({ params: { id } }: RecordProps) {
-  const data: Person = await getRecord(id);
-  return (
-    <main className="m-auto">
-      <RecordView data={data} />
-    </main>
-  );
+export default async function Record({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+  const { data } = await supabase
+    .from('travellers')
+    .select()
+    .match({ id })
+    .single();
+  return <main className="m-auto">{<RecordView data={data} />}</main>;
 }
