@@ -5,7 +5,7 @@ import { ListOfPersons } from '@/types/types';
 
 interface MobileTableItemProps {
   records: ListOfPersons[];
-  handleCardEvent: (id: string) => void;
+  handleCardEvent: (id: number) => void;
 }
 
 const titles = [

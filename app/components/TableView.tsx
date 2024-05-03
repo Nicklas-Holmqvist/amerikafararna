@@ -36,7 +36,7 @@ const TableView: React.FC<TableViewProps> = ({ records }) => {
     query: '(max-width: 1200px)',
   });
 
-  const handleCardEvent = (id: string) => {
+  const handleCardEvent = (id: number) => {
     router.push(`${window.location.origin}/record/${id}`);
   };
   return (
