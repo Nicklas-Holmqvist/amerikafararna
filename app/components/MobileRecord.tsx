@@ -1,23 +1,11 @@
 import React from 'react';
 
-import { Person } from '@/types/types';
 import { controlRecordData } from '../utils/controlRecordData';
+import { Person } from '@/types/types';
 
 interface MobileRecordProps {
   data: Person;
 }
-
-const titles = [
-  'Födelsedatum',
-  'Födelseplats',
-  'Far',
-  'Ålder vid utflytt',
-  'Utflyttningsår',
-  'Utflyttningsplats',
-  'Utflyttat till',
-  'Återflyttat',
-  'Övrig information',
-];
 
 const MobileRecord: React.FC<MobileRecordProps> = ({ data }) => {
   return (
