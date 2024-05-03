@@ -8,6 +8,8 @@ interface RecordProps {
   params: { id: string };
 }
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params: { id },
 }: RecordProps): Promise<Metadata> {
