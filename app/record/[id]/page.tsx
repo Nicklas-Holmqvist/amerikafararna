@@ -1,13 +1,12 @@
 import { supabase } from '@/app/lib/supabaseClient';
 import { Metadata } from 'next/types';
+
 import RecordView from './RecordView';
 import { Person } from '@/types/types';
 
 interface RecordProps {
   params: { id: number };
 }
-
-export const dynamic = 'force-static';
 
 export async function generateMetadata({
   params: { id },
