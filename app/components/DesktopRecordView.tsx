@@ -10,27 +10,27 @@ interface DesktopRecordViewProps {
 const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
   return (
     <div className="max-w-[1200px] m-auto">
-      <h2 className="text-2xl pb-4">
+      <h2 className="text-3xl pb-4">
         {data.title} {data.first_name} {data.last_name}
       </h2>
-      <section className="flex flex-col justify-between w-100 text-md">
+      <section className="flex flex-col justify-between w-100">
         <div className="flex flex-row">
           <div className="flex-1">
-            <dl className="flex flex-row pb-1">
+            <dl className="record-dl">
               <dt className="pr-1">Födelsedatum:</dt>
               <dd>{data.year_of_birth}</dd>
             </dl>
-            <dl className="flex flex-row pb-1">
+            <dl className="record-dl">
               <dt className="pr-1">Födelseplats:</dt>
               <dd>{data.birthplace}</dd>
             </dl>
           </div>
           <div className="flex-1">
-            <dl className="flex flex-row pb-1">
+            <dl className="record-dl">
               <dt className="pr-1">Far:</dt>
               <dd>{controlRecordData(data.father)}</dd>
             </dl>
-            <dl className="flex flex-row pb-1">
+            <dl className="record-dl">
               <dt className="pr-1">Faderns titel:</dt>
               <dd>{controlRecordData(data.title_of_father)}</dd>
             </dl>
@@ -39,40 +39,40 @@ const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
         <div className="py-4">
           <div className="flex flex-row">
             <div className="flex-1">
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Ålder vid utflytt:</dt>
                 <dd>{controlRecordData(data.age_when_emigration)}</dd>
               </dl>
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Utflyttningsår:</dt>
                 <dd>{data.emigration_date}</dd>
               </dl>
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Utflyttningsplats:</dt>
                 <dd>{data.emigration_from}</dd>
               </dl>
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Utflyttat till:</dt>
                 <dd>{controlRecordData(data.emigration_destination)}</dd>
               </dl>
             </div>
             <div className="flex-1">
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Ålder vid inflytt:</dt>
                 <dd>{controlRecordData(data.age_when_immigration)}</dd>
               </dl>
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Inflyttningsår:</dt>
                 <dd>{controlRecordData(data.immigration_date)}</dd>
               </dl>
-              <dl className="flex flex-row pb-1">
+              <dl className="record-dl">
                 <dt className="pr-1">Inflyttningsplats:</dt>
                 <dd>{controlRecordData(data.immigration_destination)}</dd>
               </dl>
             </div>
           </div>
         </div>
-        <dl className="py-4 text-md">
+        <dl className="py-4 text-[1rem]">
           <dt className="pr-1 float-left ">Övrig information:</dt>
           <dd>{controlRecordData(data.other)}</dd>
         </dl>

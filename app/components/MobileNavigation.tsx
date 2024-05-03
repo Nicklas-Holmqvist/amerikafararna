@@ -1,10 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import React from 'react';
+import Link from 'next/link';
 
-import MailIcon from '../../public/images/mail.svg';
 import { HamburgerButton } from './HamburgerButton';
+import MailIcon from '../../public/images/mail.svg';
 import { Links } from './Header';
 
 interface MobileNavigationProps {
@@ -12,13 +12,13 @@ interface MobileNavigationProps {
   setDrawer: () => void;
   controlPath: (link: Links, pathname: string) => boolean;
   pathname: string;
-  link: Links[];
+  links: Links[];
 }
 
 const MobileNavigation: React.FC<MobileNavigationProps> = ({
   setDrawer,
   drawer,
-  link,
+  links,
   pathname,
   controlPath,
 }) => {
@@ -49,23 +49,21 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       <motion.aside
         variants={mobileMenuVariant}
         className={`fixed top-0 left-0 w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-beige border-r-4 z-40`}>
-        <motion.div className="flex flex-col text-center">
-          {link.map((link, index) => (
-            <a
+        <motion.ul className="flex flex-col text-center">
+          {links.map((link, index) => (
+            <li
               key={index}
               onClick={setDrawer}
               className={`h-10 w-12 mx-8 my-8 text-md ${
                 controlPath(link, pathname) ? 'border-b-4 pt-1' : ''
               } `}>
               <Link href={link.href}>{link.title}</Link>
-            </a>
+            </li>
           ))}
-          <a
-            className="m-auto pt-6"
-            href="mailto:nicklas_holmqvist@outlook.com">
+          <a className="m-auto pt-6" href="mailto:kontakt@markemigranter.se">
             <Image className="" src={MailIcon} alt={'mail ikon'} width="28" />
           </a>
-        </motion.div>
+        </motion.ul>
       </motion.aside>
     </motion.nav>
   );

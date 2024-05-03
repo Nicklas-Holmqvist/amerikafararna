@@ -56,7 +56,14 @@ button:hover {
   border-color: var(--color-white);
 }
 
-dl {
+.record-dl {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+dt {
   font-weight: bold;
 }
 

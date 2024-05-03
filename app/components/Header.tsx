@@ -1,13 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useMediaQuery } from 'react-responsive';
-import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-import MailIcon from '../../public/images/mail.svg';
-
+import DesktopNavigation from './DesktopNavigation';
 import MobileNavigation from './MobileNavigation';
 
 interface HeaderProps {}
@@ -51,38 +49,18 @@ const Header: React.FC<HeaderProps> = ({}) => {
         </h1>
         {mobileView ? (
           <MobileNavigation
-            link={links}
+            links={links}
             drawer={drawer}
             pathname={pathname}
             setDrawer={() => setDrawer(!drawer)}
             controlPath={controlPath}
           />
         ) : (
-          <nav className="flex">
-            <ul className="flex">
-              {links.map((link) => (
-                <li
-                  key={link.path}
-                  className={`my-auto mx-4 text-md hover:border-b-2 ${
-                    controlPath(link, pathname) ? 'border-b-2 pt-1' : ''
-                  } `}>
-                  <Link className="p-4" href={link.href}>
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-              <li className="my-auto ml-6 pr-8">
-                <a href="mailto:nicklas_holmqvist@outlook.com">
-                  <Image
-                    className=""
-                    src={MailIcon}
-                    alt={'mail ikon'}
-                    width="28"
-                  />
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <DesktopNavigation
+            controlPath={controlPath}
+            links={links}
+            pathname={pathname}
+          />
         )}
       </div>
     </header>
