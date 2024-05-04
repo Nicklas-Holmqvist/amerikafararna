@@ -63,6 +63,17 @@ button:hover {
   font-size: 1rem;
 }
 
+.mobile-record-dl {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.5rem;
+}
+
+.record-float {
+  float: left;
+  padding-right: 0.5rem;
+}
+
 dt {
   font-weight: bold;
 }
