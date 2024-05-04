@@ -30,10 +30,11 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<any> {
+export async function generateStaticParams(): Promise<{ id: string }[]> {
   const { data } = await supabase.from('travellers').select('id');
 
-  return data?.map((record) => ({ id: record.id.toString() }));
+  const paths = data?.map((record) => ({ id: record.id.toString() })) || [];
+  return paths;
 }
 
 export default async function Record({
