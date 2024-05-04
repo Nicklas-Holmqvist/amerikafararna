@@ -2,6 +2,7 @@ import React from 'react';
 
 import { controlRecordData } from '../utils/controlRecordData';
 import { Person } from '@/types/types';
+import Link from 'next/link';
 
 interface DesktopRecordViewProps {
   data: Person;
@@ -72,10 +73,30 @@ const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
             </div>
           </div>
         </div>
-        <dl className="py-4 text-[1rem]">
-          <dt className="pr-1 float-left ">Övrig information:</dt>
-          <dd>{controlRecordData(data.other)}</dd>
+        <dl className="text-[1rem]">
+          <dt className="record-float">Övrig information:</dt>
+          <dd className="pl-0">{controlRecordData(data.other)}</dd>
         </dl>
+        {data.link_1 !== null ? (
+          <dl className="py-4 text-[1rem]">
+            <dt className="record-float">Extern länk:</dt>
+            <dd>
+              <Link target="_blank" href={`${data.link_1}`}>
+                {data.link_1}
+              </Link>
+            </dd>
+          </dl>
+        ) : undefined}
+        {data.link_2 !== null ? (
+          <dl className="text-[1rem]">
+            <dt className="record-float">Extern länk:</dt>
+            <dd>
+              <Link target="_blank" href={`${data.link_2}`}>
+                {data.link_2}
+              </Link>
+            </dd>
+          </dl>
+        ) : undefined}
       </section>
     </div>
   );
