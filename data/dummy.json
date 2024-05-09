@@ -1,0 +1,1002 @@
+[
+  {
+    "parish": "Älekulla",
+    "person_id": 261,
+    "year_of_birth": "1861-01-05",
+    "age_when_emigration": 20,
+    "emigration_date": "1881-04-14",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 164,
+    "year_of_birth": "1871-06-13",
+    "age_when_emigration": 19,
+    "emigration_date": "1890-04-25",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 279,
+    "year_of_birth": "1861-05-26",
+    "age_when_emigration": 27,
+    "emigration_date": "1888-03-31",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 156,
+    "year_of_birth": "1866-02-19",
+    "age_when_emigration": 20,
+    "emigration_date": "1886-12-10",
+    "immigration_date": "1886-05-26",
+    "age_when_immigration": 20,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 219,
+    "year_of_birth": "1863-08-14",
+    "age_when_emigration": 23,
+    "emigration_date": "1886-02-12",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 300,
+    "year_of_birth": "1875-08-19",
+    "age_when_emigration": 20,
+    "emigration_date": "1895-05-07",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 210,
+    "year_of_birth": "1858-01-06",
+    "age_when_emigration": 22,
+    "emigration_date": "1880-02-27",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 334,
+    "year_of_birth": "1862-05-16",
+    "age_when_emigration": 29,
+    "emigration_date": "1891-02-27",
+    "immigration_date": "1894-05-25",
+    "age_when_immigration": 32,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 248,
+    "year_of_birth": "1861-09-07",
+    "age_when_emigration": 25,
+    "emigration_date": "1886-02-19",
+    "immigration_date": "1886-08-06",
+    "age_when_immigration": 25,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 248,
+    "year_of_birth": "1861-09-07",
+    "age_when_emigration": 29,
+    "emigration_date": "1890-02-12",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 12,
+    "year_of_birth": "1875-07-21",
+    "age_when_emigration": 20,
+    "emigration_date": "1895-05-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 303,
+    "year_of_birth": "1868-02-08",
+    "age_when_emigration": 25,
+    "emigration_date": "1893-06-23",
+    "immigration_date": "1903-09-18",
+    "age_when_immigration": 35,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 280,
+    "year_of_birth": "1873-06-19",
+    "age_when_emigration": 20,
+    "emigration_date": "1893-06-23",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 289,
+    "year_of_birth": "1856-05-10",
+    "age_when_emigration": 33,
+    "emigration_date": "1889-10-03",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 31,
+    "year_of_birth": "1873-01-26",
+    "age_when_emigration": 17,
+    "emigration_date": "1890-02-28",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 45,
+    "year_of_birth": "1870-12-25",
+    "age_when_emigration": 18,
+    "emigration_date": "1888-02-17",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 1,
+    "year_of_birth": "1855-11-11",
+    "age_when_emigration": 25,
+    "emigration_date": "1880",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 36,
+    "year_of_birth": "1872-05-22",
+    "age_when_emigration": 19,
+    "emigration_date": "1891-03-21",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 217,
+    "year_of_birth": "1873-10-09",
+    "age_when_emigration": 18,
+    "emigration_date": "1891-03-21",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 159,
+    "year_of_birth": "1877-05-10",
+    "age_when_emigration": 19,
+    "emigration_date": "1896-03-27",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 297,
+    "year_of_birth": "1878-10-29",
+    "age_when_emigration": 18,
+    "emigration_date": "1896-03-27",
+    "immigration_date": "1923-11-09",
+    "age_when_immigration": 45,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 182,
+    "year_of_birth": "1857-10-10",
+    "age_when_emigration": 23,
+    "emigration_date": "1880-09-13",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 108,
+    "year_of_birth": "1874-04-12",
+    "age_when_emigration": 19,
+    "emigration_date": "1893-02-17",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 212,
+    "year_of_birth": "1868-10-07",
+    "age_when_emigration": 21,
+    "emigration_date": "1889-02-20",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 230,
+    "year_of_birth": "1857-05-06",
+    "age_when_emigration": 28,
+    "emigration_date": "1885-10-14",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 132,
+    "year_of_birth": "1872-04-24",
+    "age_when_emigration": 18,
+    "emigration_date": "1890-04-02",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 49,
+    "year_of_birth": "1846-06-16",
+    "age_when_emigration": 43,
+    "emigration_date": "1889-03-02",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 249,
+    "year_of_birth": "1870-03-10",
+    "age_when_emigration": 18,
+    "emigration_date": "1888-02-17",
+    "immigration_date": "1894-10-05",
+    "age_when_immigration": 24,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 202,
+    "year_of_birth": "1869-11-11",
+    "age_when_emigration": 20,
+    "emigration_date": "1889-07-19",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 256,
+    "year_of_birth": "1852-02-27",
+    "age_when_emigration": 29,
+    "emigration_date": "1881-04-05",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 237,
+    "year_of_birth": "1862-04-10",
+    "age_when_emigration": 21,
+    "emigration_date": "1883-03-21",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 130,
+    "year_of_birth": "1858-10-10",
+    "age_when_emigration": 32,
+    "emigration_date": "1890-02-28",
+    "immigration_date": "1892-05-21",
+    "age_when_immigration": 34,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 130,
+    "year_of_birth": "1858-10-10",
+    "age_when_emigration": 37,
+    "emigration_date": "1895-05-21",
+    "immigration_date": "1898-11-04",
+    "age_when_immigration": 40,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 287,
+    "year_of_birth": "1858-07-05",
+    "age_when_emigration": 24,
+    "emigration_date": "1882-01-20",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 333,
+    "year_of_birth": "1877-01-06",
+    "age_when_emigration": 18,
+    "emigration_date": "1895-04-05",
+    "immigration_date": "1909-06-19",
+    "age_when_immigration": 32,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 26,
+    "year_of_birth": "1875-02-05",
+    "age_when_emigration": 21,
+    "emigration_date": "1896-02-28",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 4,
+    "year_of_birth": "1834-06-21",
+    "age_when_emigration": 56,
+    "emigration_date": "1890-04-11",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 235,
+    "year_of_birth": "1863-11-19",
+    "age_when_emigration": 23,
+    "emigration_date": "1886-02-19",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 258,
+    "year_of_birth": "1870-11-23",
+    "age_when_emigration": 19,
+    "emigration_date": "1889-03-22",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 229,
+    "year_of_birth": "1873-05-20",
+    "age_when_emigration": 20,
+    "emigration_date": "1893-03-03",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 69,
+    "year_of_birth": "1864-09-10",
+    "age_when_emigration": 26,
+    "emigration_date": "1890-04-25",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 299,
+    "year_of_birth": "1870-07-23",
+    "age_when_emigration": 20,
+    "emigration_date": "1890-02-28",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 16,
+    "year_of_birth": "1874-11-04",
+    "age_when_emigration": 19,
+    "emigration_date": "1893-02-27",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 103,
+    "year_of_birth": "1877-05-01",
+    "age_when_emigration": 19,
+    "emigration_date": "1896-06-05",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 62,
+    "year_of_birth": "1863-03-01",
+    "age_when_emigration": 25,
+    "emigration_date": "1888-10-22",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 308,
+    "year_of_birth": "1870-11-11",
+    "age_when_emigration": 25,
+    "emigration_date": "1895-11-18",
+    "immigration_date": "1896-11-16",
+    "age_when_immigration": 26,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 3,
+    "year_of_birth": "1857-05-16",
+    "age_when_emigration": 31,
+    "emigration_date": "1888-10-22",
+    "immigration_date": "1893-10-27",
+    "age_when_immigration": 36,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 191,
+    "year_of_birth": "1875-06-15",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-11-12",
+    "age_when_immigration": 20,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 72,
+    "year_of_birth": "1862-09-17",
+    "age_when_emigration": 19,
+    "emigration_date": "1881-04-22",
+    "immigration_date": "1885-04-24",
+    "age_when_immigration": 23,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 205,
+    "year_of_birth": "1865-07-06",
+    "age_when_emigration": 20,
+    "emigration_date": "1885-12-31",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 231,
+    "year_of_birth": "1868-02-09",
+    "age_when_emigration": 18,
+    "emigration_date": "1886-04-30",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 59,
+    "year_of_birth": "1869-12-08",
+    "age_when_emigration": 19,
+    "emigration_date": "1888-04-16",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 24,
+    "year_of_birth": "1874-09-06",
+    "age_when_emigration": 18,
+    "emigration_date": "1892-04-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 95,
+    "year_of_birth": "1859-10-30",
+    "age_when_emigration": 22,
+    "emigration_date": "1881-04-14",
+    "immigration_date": "1884-02-01",
+    "age_when_immigration": 25,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 61,
+    "year_of_birth": "1873-05-03",
+    "age_when_emigration": 19,
+    "emigration_date": "1892-05-19",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 136,
+    "year_of_birth": "1877-03-29",
+    "age_when_emigration": 16,
+    "emigration_date": "1893-06-14",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 259,
+    "year_of_birth": "1859-09-29",
+    "age_when_emigration": 23,
+    "emigration_date": "1882-04-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 78,
+    "year_of_birth": "1862-09-11",
+    "age_when_emigration": 23,
+    "emigration_date": "1885-09-19",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 125,
+    "year_of_birth": "1872-02-13",
+    "age_when_emigration": 17,
+    "emigration_date": "1889-03-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 41,
+    "year_of_birth": "1840-08-28",
+    "age_when_emigration": 40,
+    "emigration_date": "1880-03-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 273,
+    "year_of_birth": "1843-06-30",
+    "age_when_emigration": 37,
+    "emigration_date": "1880-03-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 42,
+    "year_of_birth": "1864-12-14",
+    "age_when_emigration": 16,
+    "emigration_date": "1880-09-13",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 83,
+    "year_of_birth": "1866-05-29",
+    "age_when_emigration": 14,
+    "emigration_date": "1880-09-13",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 236,
+    "year_of_birth": "1867-10-31",
+    "age_when_emigration": 16,
+    "emigration_date": "1883-03-02",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 116,
+    "year_of_birth": "1870-01-20",
+    "age_when_emigration": 13,
+    "emigration_date": "1883-03-02",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 158,
+    "year_of_birth": "1871-10-14",
+    "age_when_emigration": 9,
+    "emigration_date": "1880-09-13",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 100,
+    "year_of_birth": "1876-07-07",
+    "age_when_emigration": 7,
+    "emigration_date": "1883-03-02",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "flicka"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 25,
+    "year_of_birth": "1878-04-29",
+    "age_when_emigration": 2,
+    "emigration_date": "1880-03-01",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 307,
+    "year_of_birth": "1865-03-18",
+    "age_when_emigration": 25,
+    "emigration_date": "1890-02-28",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 332,
+    "year_of_birth": "1838-03-23",
+    "age_when_emigration": 45,
+    "emigration_date": "1883-03-02",
+    "immigration_date": "1887-04-27",
+    "age_when_immigration": 49,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 332,
+    "year_of_birth": "1838-03-23",
+    "age_when_emigration": 52,
+    "emigration_date": "1890-02-28",
+    "immigration_date": "1891-08-22",
+    "age_when_immigration": 53,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 52,
+    "year_of_birth": "1850-04-16",
+    "age_when_emigration": 42,
+    "emigration_date": "1892-08-12",
+    "immigration_date": "1894-03-09",
+    "age_when_immigration": 44,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 15,
+    "year_of_birth": "1872-05-14",
+    "age_when_emigration": 20,
+    "emigration_date": "1892-08-12",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 5,
+    "year_of_birth": "1855-01-28",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1891-12-28",
+    "age_when_immigration": 36,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 5,
+    "year_of_birth": "1855-01-28",
+    "age_when_emigration": 37,
+    "emigration_date": "1892-08-12",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 85,
+    "year_of_birth": "1856-03-24",
+    "age_when_emigration": 31,
+    "emigration_date": "1887-05-22",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 228,
+    "year_of_birth": "1872-03-06",
+    "age_when_emigration": 14,
+    "emigration_date": "1886-11-12",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 13,
+    "year_of_birth": "1866-07-12",
+    "age_when_emigration": 20,
+    "emigration_date": "1886-02-19",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 118,
+    "year_of_birth": "1869-08-27",
+    "age_when_emigration": 21,
+    "emigration_date": "1890-01-30",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 126,
+    "year_of_birth": "1820-09-14",
+    "age_when_emigration": 53,
+    "emigration_date": "1873-01-01",
+    "immigration_date": "1877-01-01",
+    "age_when_immigration": 57,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 312,
+    "year_of_birth": "1859-04-19",
+    "age_when_emigration": 23,
+    "emigration_date": "1882-03-17",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 5,
+    "year_of_birth": "1855-01-28",
+    "age_when_emigration": 31,
+    "emigration_date": "1886-02-19",
+    "immigration_date": "1891-12-28",
+    "age_when_immigration": 36,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 261,
+    "year_of_birth": "1861-01-05",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1884-01-01",
+    "age_when_immigration": 23,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 213,
+    "year_of_birth": "1862-03-26",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-05-24",
+    "age_when_immigration": 33,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 288,
+    "year_of_birth": "1865-03-25",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-05-24",
+    "age_when_immigration": 30,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 128,
+    "year_of_birth": "1890-08-05",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-05-24",
+    "age_when_immigration": 5,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 283,
+    "year_of_birth": "1892-04-10",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-05-24",
+    "age_when_immigration": 3,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 120,
+    "year_of_birth": "1894-06-08",
+    "age_when_emigration": null,
+    "emigration_date": null,
+    "immigration_date": "1895-05-24",
+    "age_when_immigration": 1,
+    "gender_type": "pojke"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 263,
+    "year_of_birth": "1866-02-08",
+    "age_when_emigration": 19,
+    "emigration_date": "1885-03-17",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 335,
+    "year_of_birth": "1867-09-24",
+    "age_when_emigration": 20,
+    "emigration_date": "1887-10-07",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 148,
+    "year_of_birth": "1870-07-21",
+    "age_when_emigration": 19,
+    "emigration_date": "1889-06-07",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "kvinna"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 56,
+    "year_of_birth": "1864-02-27",
+    "age_when_emigration": 23,
+    "emigration_date": "1887-03-18",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 211,
+    "year_of_birth": "1865-03-31",
+    "age_when_emigration": 19,
+    "emigration_date": "1884-03-26",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 211,
+    "year_of_birth": "1865-03-31",
+    "age_when_emigration": 20,
+    "emigration_date": "1885-10-30",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 122,
+    "year_of_birth": "1869-04-13",
+    "age_when_emigration": 19,
+    "emigration_date": "1888-02-25",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 2,
+    "year_of_birth": "1871-09-14",
+    "age_when_emigration": 19,
+    "emigration_date": "1890-04-11",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 298,
+    "year_of_birth": "1867-03-01",
+    "age_when_emigration": 18,
+    "emigration_date": "1885-12-30",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 326,
+    "year_of_birth": "1846-09-20",
+    "age_when_emigration": 34,
+    "emigration_date": "1880-04-20",
+    "immigration_date": "1885-06-06",
+    "age_when_immigration": 39,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 326,
+    "year_of_birth": "1846-09-20",
+    "age_when_emigration": 45,
+    "emigration_date": "1891-04-14",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  },
+  {
+    "parish": "Älekulla",
+    "person_id": 209,
+    "year_of_birth": "1871-08-11",
+    "age_when_emigration": 20,
+    "emigration_date": "1891-05-22",
+    "immigration_date": null,
+    "age_when_immigration": null,
+    "gender_type": "man"
+  }
+]
