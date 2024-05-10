@@ -121,6 +121,12 @@ dl {
 .mapboxgl-popup-content {
   width: 53.3rem;
 }
+
+.recharts-text {
+  font-size: 1rem;
+  font-family: var(--font-serifDisplay);
+}
+
 @media (max-width: 980px) {
   .mapboxgl-popup-content {
     width: 21.3rem;

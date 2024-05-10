@@ -4,6 +4,12 @@ import LandingPageStory from './components/LandingPageStory';
 import { supabase } from './lib/supabaseClient';
 
 import DummyData from '../data/dummy.json';
+import YearBarDiagram from './components/YearBarDiagram';
+import dynamic from 'next/dynamic';
+const DynamicYearBarDiagram = dynamic(
+  () => import('./components/YearBarDiagram'),
+  { ssr: false, loading: () => <p>Laddar...</p> }
+);
 
 export const metadata: Metadata = {
   title: 'Markemigranter | Markemigranter.se',
@@ -93,9 +99,9 @@ function getEmigrationChartData(travellers: AnalyseData[]) {
         if (emigrationYear === year) count += 1;
       }
     }
-    travellersPerYear.push({ year: year, travellers: count });
+    travellersPerYear.push({ name: year.toString(), emigranter: count });
   }
-  console.log(travellersPerYear);
+  return travellersPerYear;
 }
 
 function removeYearDoubles(data: string[]) {
@@ -160,7 +166,10 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between bg-schablon bg-repeat bg-small">
-      <LandingPageStory />
+      <section className="max-w-[1400px] w-full py-10 px-4 bg-basic-white flex flex-col">
+        <DynamicYearBarDiagram data={data.emigrationTopChart} />
+        <LandingPageStory />
+      </section>
     </main>
   );
 }

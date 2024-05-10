@@ -5,7 +5,7 @@ import FamilyPhoto from '../../public/images/anders-matilda-1891.jpg';
 
 const LandingPageStory = () => {
   return (
-    <section className="max-w-[1400px] w-full py-10 px-4 bg-basic-white flex flex-col">
+    <section className="">
       <h2 className="text-2xl pb-8 md:pb4 text-center sm:text-3xl">
         Anders och Matildas liv
       </h2>
