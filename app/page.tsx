@@ -4,8 +4,10 @@ import LandingPageStory from './components/LandingPageStory';
 import { supabase } from './lib/supabaseClient';
 
 import DummyData from '../data/dummy.json';
-import YearBarDiagram from './components/YearBarDiagram';
 import dynamic from 'next/dynamic';
+import Hero from './components/Hero';
+import LandingpageHelp from './components/LandingpageHelp';
+import AmountOfPeople from './components/AmountOfPeople';
 const DynamicYearBarDiagram = dynamic(
   () => import('./components/YearBarDiagram'),
   { ssr: false, loading: () => <p>Laddar...</p> }
@@ -51,12 +53,24 @@ async function getAnalyticData() {
     if (person.immigration_date !== null) return person.immigration_date;
   }).length;
 
-  const countOfGenders = {
-    males: data.filter((person) => person.gender_type === 'man').length,
-    womans: data.filter((person) => person.gender_type === 'kvinna').length,
-    boys: data.filter((person) => person.gender_type === 'pojke').length,
-    girls: data.filter((person) => person.gender_type === 'flicka').length,
-  };
+  const countOfGenders = [
+    {
+      title: 'Män',
+      amount: data.filter((person) => person.gender_type === 'man').length,
+    },
+    {
+      title: 'Kvinnor',
+      amount: data.filter((person) => person.gender_type === 'kvinna').length,
+    },
+    {
+      title: 'Pojkar',
+      amount: data.filter((person) => person.gender_type === 'pojke').length,
+    },
+    {
+      title: 'Flickor',
+      amount: data.filter((person) => person.gender_type === 'flicka').length,
+    },
+  ];
 
   const medianOfAges = {
     total: getMedianAge(data, 'total'),
@@ -66,7 +80,7 @@ async function getAnalyticData() {
 
   const oldestByGender = {
     men: getOldestByGender(data, 'man'),
-    woman: getOldestByGender(data, 'kvinna'),
+    women: getOldestByGender(data, 'kvinna'),
   };
 
   return {
@@ -166,9 +180,12 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between bg-schablon bg-repeat bg-small">
-      <section className="max-w-[1400px] w-full py-10 px-4 bg-basic-white flex flex-col">
+      <section className="max-w-[1400px] w-full">
+        <Hero />
         <DynamicYearBarDiagram data={data.emigrationTopChart} />
-        <LandingPageStory />
+        <LandingpageHelp />
+        <AmountOfPeople data={data.countOfGenders} />
+        {/* <LandingPageStory /> */}
       </section>
     </main>
   );

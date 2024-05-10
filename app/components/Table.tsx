@@ -124,7 +124,7 @@ const Table: React.FC<TableProps> = () => {
   }, [getData]);
 
   return (
-    <section className="max-w-[1400px] flex flex-col m-auto py-10 bg-basic-white px-2 sm:px-12">
+    <section className="max-w-[1400px] flex flex-col m-auto py-10 bg-white px-2 sm:px-12">
       {loading ? (
         ''
       ) : (

@@ -26,6 +26,8 @@ button,
   font-family: var(--font-serifDisplay);
 }
 
+h5,
+figcaption,
 td,
 nav,
 dl,
@@ -34,7 +36,6 @@ input,
 span,
 a {
   font-family: var(--font-specialElite);
-  font-weight: 400;
 }
 
 h4 {

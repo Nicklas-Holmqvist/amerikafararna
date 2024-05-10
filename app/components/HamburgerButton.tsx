@@ -10,7 +10,7 @@ export const HamburgerButton: React.FC<HamburgerButtonProps> = ({
   ...props
 }) => {
   return (
-    <button {...props} className="fixed top-[2rem] left-4 z-50 bg-beige">
+    <button {...props} className="fixed top-[1.4rem] left-4 z-50 bg-beige">
       <LuMenu size={36} />
     </button>
   );
