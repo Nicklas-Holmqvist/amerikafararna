@@ -14,7 +14,7 @@ const AmountOfPeople: React.FC<AmountOfPeolpProps> = ({ data }) => {
       <span className="text-xs md:text-sm text-center pb-14">
         Endast Älekulla socken
       </span>
-      <div className="flex flex-row flex-wrap justify-center w-full justify-between md:justify-around lg:justify-between">
+      <div className="flex flex-row flex-wrap justify-center w-full justify-between md:justify-around lg:justify-between ">
         {data.map((type, index) => (
           <CountCard key={index} data={type} />
         ))}
