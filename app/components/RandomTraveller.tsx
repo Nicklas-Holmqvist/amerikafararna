@@ -17,7 +17,7 @@ const RandomTraveller: React.FC<RandomTravellerProps> = ({ data }) => {
     query: '(max-width: 1024px)',
   });
   return (
-    <section className="max-w-[1400px] w-full py-20 px-4 md:px-12 bg-white">
+    <section className="max-w-[1400px] w-full py-20 px-8 md:px-12 bg-white">
       <SectionHeader title={'Dagens utvalda resenär'} />
       <div className="pt-10">
         {mobileView ? (
