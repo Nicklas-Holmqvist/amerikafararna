@@ -1,8 +1,6 @@
 import { supabase } from '@/app/lib/supabaseClient';
 import { cache } from 'react';
 
-export const revalidate = 10;
-
 export const getRandomTraveller = cache(async (count: any) => {
   const randomNumber = Math.floor(Math.random() * count);
 

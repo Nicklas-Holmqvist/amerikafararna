@@ -16,7 +16,7 @@ import Hero from './components/Hero';
 
 const DynamicYearBarDiagram = dynamic(
   () => import('./components/YearBarDiagram'),
-  { ssr: false, loading: () => <p>Laddar...</p> }
+  { ssr: false, loading: () => <p></p> }
 );
 
 export const metadata: Metadata = {
@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   description:
     'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
 };
+
+export const revalidate = 10;
 
 export default async function Home() {
   const data: any = await getAnalyticData();
