@@ -15,7 +15,10 @@ const LandingpageHelp: React.FC<LandingpageHelpProps> = ({}) => {
         innefattar 24 socknar och för att gå igenom allt uppskattas all hjälp vi
         kan få. Är du intresserad av att hjälpa till hör av dig.
       </p>
-      <ButtonSecondary text="Kontakta" />
+      <ButtonSecondary
+        text="Kontakta"
+        href="mailto:kontakt@markemigranter.se"
+      />
     </section>
   );
 };
