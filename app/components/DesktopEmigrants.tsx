@@ -27,7 +27,7 @@ const DesktopEmigrants: React.FC<DesktopEmigrantsProps> = ({
       </tr>
       {emigrants.map((person, index) => (
         <tr
-          className={`border-y hover:cursor-pointer transition duration-150 hover:bg-green hover:text-basic-white text-sm dropIn opacity-0`}
+          className={`border-y hover:cursor-pointer transition duration-150 hover:bg-green hover:text-white text-sm dropIn opacity-0`}
           style={{ animationDelay: `${index * 0.02}s` }}
           key={index}
           onClick={() => handleCardEvent(person.id)}>

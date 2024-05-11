@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { useRef, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import MapIcon from '../../public/images/map-marker.svg';

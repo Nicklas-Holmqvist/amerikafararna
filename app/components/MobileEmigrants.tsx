@@ -20,7 +20,7 @@ const MobileEmigrants: React.FC<MobileEmigrantsProps> = ({
       <h4>{title}</h4>
       {emigrants.map((person, index) => (
         <div
-          className={`border-b py-1 pr-2 hover:cursor-pointer transition duration-150 hover:bg-green hover:text-basic-white text-sm dropIn opacity-0`}
+          className={`border-b py-1 pr-2 hover:cursor-pointer transition duration-150 hover:bg-green hover:text-white text-sm dropIn opacity-0`}
           style={{ animationDelay: `${index * 0.02}s` }}
           key={index}
           onClick={() => handleCardEvent(person.id)}>

@@ -39,7 +39,7 @@ const MobilePagination: React.FC<MobilePaginationProps> = ({
           key={index}
           className={`p-2 w-10 h-10 m-1 border transition duration-150 ${
             Number(currentPage) === pagination
-              ? 'bg-green text-basic-white'
+              ? 'bg-green text-white'
               : 'bg-beige'
           }`}
           onClick={() => {

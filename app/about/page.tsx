@@ -14,7 +14,7 @@ const page: React.FC<PageProps> = ({}) => {
   return (
     <main className="m-auto bg-schablon bg-repeat bg-small">
       <section
-        className="max-w-[1400px] m-auto bg-basic-white py-10 px-8"
+        className="max-w-[1400px] m-auto bg-white py-10 px-8"
         style={{ height: 'calc(100vh - 6.1rem)' }}>
         <h2 className="text-center text-2xl sm:text-3xl pb-10">
           Välkommen till Markemigranterna
@@ -53,13 +53,13 @@ const page: React.FC<PageProps> = ({}) => {
         </div>
         <div className="w-full flex justify-center gap-8 m-auto py-10">
           <Link
-            className="border p-2 pt-3 hover:bg-green hover:text-basic-white"
+            className="border p-2 pt-3 hover:bg-green hover:text-white"
             href={'/list?page=1&search='}
             target="_blank">
             Sök i listan
           </Link>
           <Link
-            className="border p-2 pt-3 hover:bg-green hover:text-basic-white"
+            className="border p-2 pt-3 hover:bg-green hover:text-white"
             href={'/map'}
             target="_blank">
             Hitta på kartan

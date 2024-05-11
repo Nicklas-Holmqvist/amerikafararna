@@ -38,11 +38,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <header className={`bg-beige ${mobileView ? 'border-none' : 'border-b-2'}`}>
       <div
-        className={`relative h-[6rem] max-w-[1400px] flex content-center justify-between m-auto z-40`}>
+        className={`relative h-[5rem] max-w-[1400px] flex content-center justify-between m-auto z-40`}>
         <h1
-          className={` h-[6rem] ${
+          className={` h-[5rem] ${
             mobileView ? 'w-full text-center fixed border-b-2 bg-beige' : ''
-          } text-4xl sm:text-5xl content-center pl-8`}>
+          } text-3xl sm:text-4xl content-center pl-8`}>
           <Link className="header-link text-color-green" href={'/'}>
             Markemigranter
           </Link>

@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             } else return;
           }}
           value={inputValue}
-          className="w-auto flex-grow pl-4 pt-1 bg-basic-white border text-sm border text-black placeholder-black"
+          className="w-auto flex-grow pl-4 pt-1 bg-white border text-sm border text-black placeholder-black"
           type="text"
           name="search"
           id="search"
