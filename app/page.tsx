@@ -8,6 +8,8 @@ import dynamic from 'next/dynamic';
 import Hero from './components/Hero';
 import LandingpageHelp from './components/LandingpageHelp';
 import AmountOfPeople from './components/AmountOfPeople';
+import MedianAge from './components/MedianAge';
+import TotalEmiAndImmi from './components/TotalEmiAndImmi';
 const DynamicYearBarDiagram = dynamic(
   () => import('./components/YearBarDiagram'),
   { ssr: false, loading: () => <p>Laddar...</p> }
@@ -46,12 +48,18 @@ async function getAnalyticData() {
 
   const emigrationTopChart = getEmigrationChartData(data);
 
-  const countOfEmigrants = data.filter((person) => {
-    if (person.emigration_date !== null) return person.emigration_date;
-  }).length;
-  const countOfImmigrants = data.filter((person) => {
-    if (person.immigration_date !== null) return person.immigration_date;
-  }).length;
+  const countOfEmigrants = {
+    title: 'Emigranter',
+    amount: data.filter((person) => {
+      if (person.emigration_date !== null) return person.emigration_date;
+    }).length,
+  };
+  const countOfImmigrants = {
+    title: 'Immigranter',
+    amount: data.filter((person) => {
+      if (person.immigration_date !== null) return person.immigration_date;
+    }).length,
+  };
 
   const countOfGenders = [
     {
@@ -72,16 +80,15 @@ async function getAnalyticData() {
     },
   ];
 
-  const medianOfAges = {
-    total: getMedianAge(data, 'total'),
-    men: getMedianAge(data, 'man'),
-    women: getMedianAge(data, 'kvinna'),
-  };
+  const medianOfAges = [
+    { title: 'Män', amount: getMedianAge(data, 'man') },
+    { title: 'Kvinnor', amount: getMedianAge(data, 'kvinna') },
+  ];
 
-  const oldestByGender = {
-    men: getOldestByGender(data, 'man'),
-    women: getOldestByGender(data, 'kvinna'),
-  };
+  const oldestByGender = [
+    { title: 'Män', amount: getOldestByGender(data, 'man') },
+    { title: 'Kvinnor', amount: getOldestByGender(data, 'kvinna') },
+  ];
 
   return {
     countOfEmigrants,
@@ -184,7 +191,12 @@ export default async function Home() {
         <Hero />
         <DynamicYearBarDiagram data={data.emigrationTopChart} />
         <LandingpageHelp />
+        <TotalEmiAndImmi
+          emigrants={data.countOfEmigrants}
+          immigrants={data.countOfImmigrants}
+        />
         <AmountOfPeople data={data.countOfGenders} />
+        <MedianAge median={data.medianOfAges} age={data.oldestByGender} />
         {/* <LandingPageStory /> */}
       </section>
     </main>
