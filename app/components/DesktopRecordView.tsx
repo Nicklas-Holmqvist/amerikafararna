@@ -1,8 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { controlRecordData } from '../utils/controlRecordData';
 import { Person } from '@/types/types';
-import Link from 'next/link';
 
 interface DesktopRecordViewProps {
   data: Person;

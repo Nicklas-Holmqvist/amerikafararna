@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ButtonSecondary from './ButtonSecondary';
+
 interface LandingpageHelpProps {}
 
 const LandingpageHelp: React.FC<LandingpageHelpProps> = ({}) => {
@@ -13,9 +15,7 @@ const LandingpageHelp: React.FC<LandingpageHelpProps> = ({}) => {
         innefattar 24 socknar och för att gå igenom allt uppskattas all hjälp vi
         kan få. Är du intresserad av att hjälpa till hör av dig.
       </p>
-      <button className="border py-2 px-4 rounded text-sm md:text-md">
-        Kontakta
-      </button>
+      <ButtonSecondary text="Kontakta" />
     </section>
   );
 };

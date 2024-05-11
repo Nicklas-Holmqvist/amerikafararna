@@ -1,7 +1,6 @@
 import React from 'react';
-import { TravellerData } from '@/types/types';
 
-import { controlRecordData } from '../utils/controlRecordData';
+import { TravellerData } from '@/types/types';
 import MobileEmigrants from './MobileEmigrants';
 
 interface MobileMapPopupProps {

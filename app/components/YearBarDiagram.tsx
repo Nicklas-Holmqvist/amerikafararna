@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { BarChart, XAxis, Bar, Tooltip, ResponsiveContainer } from 'recharts';
+
 import SectionHeader from './SectionHeader';
 
 interface YearBarDiagramProps {

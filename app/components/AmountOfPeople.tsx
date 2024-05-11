@@ -1,6 +1,7 @@
 import React from 'react';
-import CountCard from './CountCard';
+
 import SectionHeader from './SectionHeader';
+import CountCard from './CountCard';
 
 interface AmountOfPeolpProps {
   data: { title: string; amount: number }[];
