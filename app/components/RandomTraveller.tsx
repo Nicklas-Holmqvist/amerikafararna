@@ -18,7 +18,7 @@ const RandomTraveller: React.FC<RandomTravellerProps> = ({ data }) => {
   });
   return (
     <section className="max-w-[1400px] w-full py-20 px-4 md:px-12 bg-white">
-      <SectionHeader title={'En slumpmässigt utvald resenär'} />
+      <SectionHeader title={'Dagens utvalda resenär'} />
       <div className="pt-10">
         {mobileView ? (
           <MobileRecord data={data} smallTitle={true} />

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'Hitta alla som emigrerat eller immigrerat från Älekulla socken till Amerika mellan 1862 till 1928',
 };
 
-export const revalidate = 10;
+export const revalidate = 86400;
 
 export default async function Home() {
   const data: any = await getAnalyticData();
