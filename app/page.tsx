@@ -12,6 +12,7 @@ import MedianAge from './components/MedianAge';
 import TotalEmiAndImmi from './components/TotalEmiAndImmi';
 import { Person } from '@/types/types';
 import RandomTraveller from './components/RandomTraveller';
+import { cache } from 'react';
 const DynamicYearBarDiagram = dynamic(
   () => import('./components/YearBarDiagram'),
   { ssr: false, loading: () => <p>Laddar...</p> }
@@ -185,7 +186,9 @@ function getMedianAge(travellers: AnalyseData[], type: string) {
   return Math.round(getAges / count);
 }
 
-async function getRandomTraveller(count: any) {
+export const revalidate = 10;
+
+const getRandomTraveller = cache(async (count: any) => {
   const randomNumber = Math.floor(Math.random() * count);
 
   const { data, error } = await supabase
@@ -200,7 +203,7 @@ async function getRandomTraveller(count: any) {
   }
 
   return data[0];
-}
+});
 
 export default async function Home() {
   const data: any = await getAnalyticData();
