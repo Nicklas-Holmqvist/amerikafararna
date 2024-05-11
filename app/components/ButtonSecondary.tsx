@@ -8,7 +8,7 @@ interface ButtonSecondary {
 
 const ButtonSecondary: React.FC<ButtonSecondary> = ({ text, href }) => {
   return (
-    <button className="border py-2 px-4 rounded text-sm md:text-md">
+    <button className="border pt-2 pb-1 px-4 rounded text-md md:text-lg">
       <Link href={href}>{text}</Link>
     </button>
   );
