@@ -6,12 +6,13 @@ import { Person } from '@/types/types';
 
 interface MobileRecordProps {
   data: Person;
+  smallTitle?: boolean;
 }
 
-const MobileRecord: React.FC<MobileRecordProps> = ({ data }) => {
+const MobileRecord: React.FC<MobileRecordProps> = ({ data, smallTitle }) => {
   return (
     <section>
-      <h2 className="text-2xl font-bold pb-3">
+      <h2 className={`${smallTitle ? 'text-md' : 'text-2xl'} font-bold pb-3`}>
         {data.title} {data.first_name} {data.last_name}
       </h2>
       <div className="flex flex-col">

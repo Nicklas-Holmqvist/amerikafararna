@@ -1,24 +1,23 @@
 export interface Person {
   id: number;
   parish: string;
-  title: string;
+  title: string | null;
   first_name: string;
   last_name: string;
-  year_of_birth: string;
+  year_of_birth: string | null;
   emigration_from: string;
-  emigration_date: string;
-  emigration_destination: string;
-  birthplace: string;
-  title_of_father: string;
+  emigration_date: string | null;
+  emigration_destination: string | null;
+  birthplace: string | null;
+  title_of_father: string | null;
   father: string;
-  immigration_from: string;
-  immigration_destination: string;
-  immigration_date: string;
-  other: string;
-  link_1: string;
-  link_2: string;
-  age_when_emigration: string;
-  age_when_immigration: string;
+  immigration_destination: string | null;
+  immigration_date: string | null;
+  other: string | null;
+  link_1: string | null;
+  link_2: string | null;
+  age_when_emigration: number | null;
+  age_when_immigration: number | null;
 }
 
 export interface ListOfPersons {

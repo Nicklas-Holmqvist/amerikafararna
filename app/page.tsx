@@ -10,6 +10,8 @@ import LandingpageHelp from './components/LandingpageHelp';
 import AmountOfPeople from './components/AmountOfPeople';
 import MedianAge from './components/MedianAge';
 import TotalEmiAndImmi from './components/TotalEmiAndImmi';
+import { Person } from '@/types/types';
+import RandomTraveller from './components/RandomTraveller';
 const DynamicYearBarDiagram = dynamic(
   () => import('./components/YearBarDiagram'),
   { ssr: false, loading: () => <p>Laddar...</p> }
@@ -33,7 +35,7 @@ interface AnalyseData {
 }
 
 async function getAnalyticData() {
-  const { data, error } = await supabase
+  const { data, error, count } = await supabase
     .from('travellers')
     .select(
       'parish, person_id, year_of_birth, age_when_emigration, emigration_date, immigration_date, age_when_immigration, gender_type',
@@ -91,6 +93,7 @@ async function getAnalyticData() {
   ];
 
   return {
+    count,
     countOfEmigrants,
     countOfImmigrants,
     countOfGenders,
@@ -182,8 +185,26 @@ function getMedianAge(travellers: AnalyseData[], type: string) {
   return Math.round(getAges / count);
 }
 
+async function getRandomTraveller(count: any) {
+  const randomNumber = Math.floor(Math.random() * count);
+
+  const { data, error } = await supabase
+    .from('travellers')
+    .select(
+      'id, parish, title, first_name, last_name, year_of_birth, birthplace, title_of_father, father, emigration_from, age_when_emigration, emigration_date, emigration_destination, immigration_date, immigration_destination, age_when_immigration,other, link_1, link_2'
+    )
+    .eq('id', randomNumber);
+
+  if (error) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return data[0];
+}
+
 export default async function Home() {
   const data: any = await getAnalyticData();
+  const randomTraveller: Person = await getRandomTraveller(data.count);
 
   return (
     <main className="flex flex-col items-center justify-between bg-schablon bg-repeat bg-small">
@@ -195,6 +216,7 @@ export default async function Home() {
           emigrants={data.countOfEmigrants}
           immigrants={data.countOfImmigrants}
         />
+        <RandomTraveller data={randomTraveller} />
         <AmountOfPeople data={data.countOfGenders} />
         <MedianAge median={data.medianOfAges} age={data.oldestByGender} />
         {/* <LandingPageStory /> */}

@@ -28,7 +28,7 @@ const DesktopPagination: React.FC<DesktopPaginationProps> = ({
           key={index}
           className={`p-2 w-10 h-10 m-1 border transition duration-150  ${
             Number(currentPage) === index + 1
-              ? 'bg-green text-basic-white'
+              ? 'bg-green text-white'
               : 'bg-beige'
           }`}
           onClick={() => {

@@ -6,12 +6,16 @@ import Link from 'next/link';
 
 interface DesktopRecordViewProps {
   data: Person;
+  smallTitle?: boolean;
 }
 
-const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({ data }) => {
+const DesktopRecordView: React.FC<DesktopRecordViewProps> = ({
+  data,
+  smallTitle,
+}) => {
   return (
-    <div className="max-w-[1200px] m-auto">
-      <h2 className="text-3xl pb-4">
+    <div className={`${smallTitle ? 'w-full' : 'max-w-[1200px]'} m-auto`}>
+      <h2 className={`${smallTitle ? 'text-2xl' : 'text-3xl'} pb-4`}>
         {data.title} {data.first_name} {data.last_name}
       </h2>
       <section className="flex flex-col justify-between w-100">

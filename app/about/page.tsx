@@ -53,13 +53,13 @@ const page: React.FC<PageProps> = ({}) => {
         </div>
         <div className="w-full flex justify-center gap-8 m-auto py-10">
           <Link
-            className="border p-2 pt-3 hover:bg-green hover:text-basic-white"
+            className="border p-2 pt-3 hover:bg-green hover:text-white"
             href={'/list?page=1&search='}
             target="_blank">
             Sök i listan
           </Link>
           <Link
-            className="border p-2 pt-3 hover:bg-green hover:text-basic-white"
+            className="border p-2 pt-3 hover:bg-green hover:text-white"
             href={'/map'}
             target="_blank">
             Hitta på kartan
