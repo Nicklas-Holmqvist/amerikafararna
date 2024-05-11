@@ -16,8 +16,8 @@ const Hero: React.FC<HeroProps> = ({}) => {
         Sök i registret eller hitta på kartan
       </h5>
       <div className="w-[14rem] md:w-[16rem] flex flex-row justify-between items-center pt-6">
-        <ButtonPrimary text="Utforska" />
-        <ButtonSecondary text="Kartan" />
+        <ButtonPrimary text="Utforska" href="/list?page=1&search=" />
+        <ButtonSecondary text="Kartan" href="/map" />
       </div>
     </section>
   );
